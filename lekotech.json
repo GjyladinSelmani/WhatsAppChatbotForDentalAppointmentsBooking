@@ -1,0 +1,4046 @@
+{
+	"info": {
+		"_postman_id": "b84e8ed5-ebcb-4c0c-9fa2-de7b91fab367",
+		"name": "Leko Tech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10942669"
+	},
+	"item": [
+		{
+			"name": "Temporary Parts",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/temporary-part/insert/datatable?institution_id={{institutionId}}&role={{role}}&status=1,2,3,4,5&limit=5&page=1&sort_by=date_created&descending=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"temporary-part",
+								"insert",
+								"datatable"
+							],
+							"query": [
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "status",
+									"value": "1,2,3,4,5"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort_by",
+									"value": "date_created"
+								},
+								{
+									"key": "descending",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const result = pm.response.json();",
+									"pm.environment.set('temporaryPart', result);",
+									"pm.test('Set temporaryPart', () => {",
+									"    pm.expect(pm.environment.get('temporaryPart')).to.eql(result);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/temporary-part/single/60368d981eed26046b6fbb49",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"temporary-part",
+								"single",
+								"60368d981eed26046b6fbb49"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/temporary-part/insert/search/regular?institution_id={{institutionId}}&role={{role}}&limit=5&page=1&sort_by=date_created&descending=true&search=something",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"temporary-part",
+								"insert",
+								"search",
+								"regular"
+							],
+							"query": [
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort_by",
+									"value": "date_created"
+								},
+								{
+									"key": "descending",
+									"value": "true"
+								},
+								{
+									"key": "search",
+									"value": "something",
+									"description": "search string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchIdOnly",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/temporary-part/insert/search/id?institution_id={{institutionId}}&role={{role}}&limit=5&page=1&sort_by=date_created&descending=true&search=something",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"temporary-part",
+								"insert",
+								"search",
+								"id"
+							],
+							"query": [
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort_by",
+									"value": "date_created"
+								},
+								{
+									"key": "descending",
+									"value": "true"
+								},
+								{
+									"key": "search",
+									"value": "something",
+									"description": "search string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEmptyGrouped",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/temporary-part/insert/empty-grouped?institution_id={{institutionId}}&role={{role}}&limit=5&page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"temporary-part",
+								"insert",
+								"empty-grouped"
+							],
+							"query": [
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changeLocation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"parts_ids\": [ \"5eb3e428966faf77ade9daaa\" ],\n\t\"repository_id\": \"5eaa7695f895000df4249e19\",\n\t\"room_id\": \"5eaa7695f895000df4249e1a\",\n\t\"location_id\": \"5eaa7695f895000df4249e1b\",\n\t\"shelf_id\": \"5eaa7695f895000df4249e10\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/temporary-part/insert/location",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"temporary-part",
+								"insert",
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generateEmptyPartFromId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": \"{{userId}}\",\n\t\"institution_id\": \"{{institutionId}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/temporary-part/insert/empty/single/__validObjectId__",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"temporary-part",
+								"insert",
+								"empty",
+								"single",
+								"__validObjectId__"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\"imagesToDelete\":[], {\"images\": []}",
+									"description": "imagesToDelete takes an array of existing image files",
+									"type": "text"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/AmeraldoHidri/Desktop/sample0.jpg"
+								},
+								{
+									"key": "audio",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/temporary-part/insert?id=5eb8f81f966faf77ade9d264",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"temporary-part",
+								"insert"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5eb8f81f966faf77ade9d264",
+									"description": "replace __validObjectId__ with the ID of the part that you want to edit"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SendForApproval",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": \"{{userId}}\",\n\t\"institution_id\": \"{{institutionId}}\",\n\t\"parts\": [\n\t\t{\"id\": \"5e5f8237f42c1035681ed463\"}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/temporary-part/insert/approve",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"temporary-part",
+								"insert",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sell",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": \"{{userId}}\",\n\t\"institution_id\": \"{{institutionId}}\",\n\t\"part_id\": \"619e6e48bb522b7438a3818a\",\n    \"client_id\": \"5e58c2391b78952183d168d8\",\n    \"price\": 500,\n    \"cash\": 500,\n    \"currency\": \"EUR\",\n    \"notes\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/temporary-part/insert/sell",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"temporary-part",
+								"insert",
+								"sell"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/temporary-part/?id=__validObjectId__",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"temporary-part",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "__validObjectId__",
+									"description": "replace __validObjectId__ with the ID of the part that you want to delete."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteEmpty",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{baseUrl}}/temporary-part/insert/empty?date=2020-05-11&institution_id={{institutionId}}&user_id={{userId}}&role={{role}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"temporary-part",
+								"insert",
+								"empty"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2020-05-11"
+								},
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "user_id",
+									"value": "{{userId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quality",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/quality",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"quality"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shipment",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/shipment?role={{role}}&institution_id={{institutionId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"shipment"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Test\",\n\t\"description\": \"Test\",\n\t\"date\": \"__validISOStringDate__\",\n\t\"institution\": \"{{institutionId}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/shipment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"shipment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Warranty",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/warranty",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"warranty"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Repository",
+			"item": [
+				{
+					"name": "GetAll (NEW)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/repository/new?role={{role}}&institution_id={{institutionId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"repository",
+								"new"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/repository?role={{role}}&institution_id={{institutionId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"repository"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetShelf",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/repository/shelf?id=5e2033ec231244024ece3c4a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"repository",
+								"shelf"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5e2033ec231244024ece3c4a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetShelves",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/repository/shelves?repository_id=5ca4c70894d4d9172846d6a0&room_id=5ca9a6223fb57e23b141b7bd&location_id=5ca4ce11d781ff320c21db7e",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"repository",
+								"shelves"
+							],
+							"query": [
+								{
+									"key": "repository_id",
+									"value": "5ca4c70894d4d9172846d6a0"
+								},
+								{
+									"key": "room_id",
+									"value": "5ca9a6223fb57e23b141b7bd"
+								},
+								{
+									"key": "location_id",
+									"value": "5ca4ce11d781ff320c21db7e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetParts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/repository/parts?id=5e2033ec231244024ece3c4a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"repository",
+								"parts"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5e2033ec231244024ece3c4a"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://80.90.81.212:35555/part/inventory/single/5e46fe655d43547d4db60a04",
+							"protocol": "http",
+							"host": [
+								"80",
+								"90",
+								"81",
+								"212"
+							],
+							"port": "35555",
+							"path": [
+								"part",
+								"inventory",
+								"single",
+								"5e46fe655d43547d4db60a04"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part/inventory/datatable?institution_id={{institutionId}}&role={{role}}&limit=5&page=1&sort_by=date_created&descending=false",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"inventory",
+								"datatable"
+							],
+							"query": [
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort_by",
+									"value": "date_created"
+								},
+								{
+									"key": "descending",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part/inventory/search/regular?institution_id={{institutionId}}&role={{role}}&limit=5&page=1&sort_by=date_created&descending=true&search_field=9d250&type=id&language=it",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"inventory",
+								"search",
+								"regular"
+							],
+							"query": [
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort_by",
+									"value": "date_created"
+								},
+								{
+									"key": "descending",
+									"value": "true"
+								},
+								{
+									"key": "search_field",
+									"value": "9d250",
+									"description": "part's qr code"
+								},
+								{
+									"key": "type",
+									"value": "id"
+								},
+								{
+									"key": "language",
+									"value": "it",
+									"description": "it|sq"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByTitleRegular",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part/inventory/search/regular?institution_id={{institutionId}}&role={{role}}&limit=5&page=1&sort_by=date_created&descending=true&title_code=2275&type=title&language=it",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"inventory",
+								"search",
+								"regular"
+							],
+							"query": [
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort_by",
+									"value": "date_created"
+								},
+								{
+									"key": "descending",
+									"value": "true"
+								},
+								{
+									"key": "title_code",
+									"value": "2275"
+								},
+								{
+									"key": "type",
+									"value": "title"
+								},
+								{
+									"key": "language",
+									"value": "it",
+									"description": "it|sq"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByPraRegular",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part/inventory/search/regular?institution_id={{institutionId}}&role={{role}}&limit=5&page=1&sort_by=date_created&descending=true&search_field=200&type=pra&language=it",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"inventory",
+								"search",
+								"regular"
+							],
+							"query": [
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort_by",
+									"value": "date_created"
+								},
+								{
+									"key": "descending",
+									"value": "true"
+								},
+								{
+									"key": "search_field",
+									"value": "200",
+									"description": "PRA number"
+								},
+								{
+									"key": "type",
+									"value": "pra"
+								},
+								{
+									"key": "language",
+									"value": "it",
+									"description": "it|sq"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByOthersRegular",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part/inventory/search/regular?institution_id={{institutionId}}&role={{role}}&limit=5&page=1&sort_by=date_created&descending=true&search_field=test&type=other&language=it",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"inventory",
+								"search",
+								"regular"
+							],
+							"query": [
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort_by",
+									"value": "date_created"
+								},
+								{
+									"key": "descending",
+									"value": "true"
+								},
+								{
+									"key": "search_field",
+									"value": "test"
+								},
+								{
+									"key": "type",
+									"value": "other"
+								},
+								{
+									"key": "language",
+									"value": "it",
+									"description": "it|sq"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByTitleAdvanced",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part/inventory/search/advanced?institution_id={{institutionId}}&role={{role}}&limit=5&page=1&sort_by=date_created&descending=true&title_code=2275&type=title&language=it&brand=16&model=22&version=1&institution&shipment&status=1,2,2.1,3,4&quality=5c8ed1fdc11d3b5bc4387c97,5c8ed1e9c11d3b5bc4387c96,5c8ed179c11d3b5bc4387c95,5c8ed088c11d3b5bc4387c94,5c8ed05dc11d3b5bc4387c93&price=0,5000&start_date&end_date",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"inventory",
+								"search",
+								"advanced"
+							],
+							"query": [
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort_by",
+									"value": "date_created"
+								},
+								{
+									"key": "descending",
+									"value": "true"
+								},
+								{
+									"key": "title_code",
+									"value": "2275"
+								},
+								{
+									"key": "type",
+									"value": "title"
+								},
+								{
+									"key": "language",
+									"value": "it",
+									"description": "it|sq"
+								},
+								{
+									"key": "brand",
+									"value": "16"
+								},
+								{
+									"key": "model",
+									"value": "22"
+								},
+								{
+									"key": "version",
+									"value": "1"
+								},
+								{
+									"key": "institution",
+									"value": null
+								},
+								{
+									"key": "shipment",
+									"value": null
+								},
+								{
+									"key": "status",
+									"value": "1,2,2.1,3,4"
+								},
+								{
+									"key": "quality",
+									"value": "5c8ed1fdc11d3b5bc4387c97,5c8ed1e9c11d3b5bc4387c96,5c8ed179c11d3b5bc4387c95,5c8ed088c11d3b5bc4387c94,5c8ed05dc11d3b5bc4387c93"
+								},
+								{
+									"key": "price",
+									"value": "0,5000"
+								},
+								{
+									"key": "start_date",
+									"value": null
+								},
+								{
+									"key": "end_date",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByPraAdvanced",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part/inventory/search/advanced?institution_id={{institutionId}}&role={{role}}&limit=5&page=1&sort_by=date_created&descending=true&search_field=200&type=pra&language=it&brand=16&model=22&version=1&institution&shipment&status=1,2,2.1,3,4&quality=5c8ed1fdc11d3b5bc4387c97,5c8ed1e9c11d3b5bc4387c96,5c8ed179c11d3b5bc4387c95,5c8ed088c11d3b5bc4387c94,5c8ed05dc11d3b5bc4387c93&price=0,5000&start_date&end_date",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"inventory",
+								"search",
+								"advanced"
+							],
+							"query": [
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort_by",
+									"value": "date_created"
+								},
+								{
+									"key": "descending",
+									"value": "true"
+								},
+								{
+									"key": "search_field",
+									"value": "200"
+								},
+								{
+									"key": "type",
+									"value": "pra"
+								},
+								{
+									"key": "language",
+									"value": "it",
+									"description": "it|sq"
+								},
+								{
+									"key": "brand",
+									"value": "16"
+								},
+								{
+									"key": "model",
+									"value": "22"
+								},
+								{
+									"key": "version",
+									"value": "1"
+								},
+								{
+									"key": "institution",
+									"value": null
+								},
+								{
+									"key": "shipment",
+									"value": null
+								},
+								{
+									"key": "status",
+									"value": "1,2,2.1,3,4"
+								},
+								{
+									"key": "quality",
+									"value": "5c8ed1fdc11d3b5bc4387c97,5c8ed1e9c11d3b5bc4387c96,5c8ed179c11d3b5bc4387c95,5c8ed088c11d3b5bc4387c94,5c8ed05dc11d3b5bc4387c93"
+								},
+								{
+									"key": "price",
+									"value": "0,5000"
+								},
+								{
+									"key": "start_date",
+									"value": null
+								},
+								{
+									"key": "end_date",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByOthersAdvanced",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part/inventory/search/advanced?institution_id={{institutionId}}&role={{role}}&limit=5&page=1&sort_by=date_created&descending=true&search_field=test&type=other&language=it&brand=16&model=22&version=1&institution&shipment&status=1,2,2.1,3,4&quality=5c8ed1fdc11d3b5bc4387c97,5c8ed1e9c11d3b5bc4387c96,5c8ed179c11d3b5bc4387c95,5c8ed088c11d3b5bc4387c94,5c8ed05dc11d3b5bc4387c93&price=0,5000&start_date&end_date",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"inventory",
+								"search",
+								"advanced"
+							],
+							"query": [
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort_by",
+									"value": "date_created"
+								},
+								{
+									"key": "descending",
+									"value": "true"
+								},
+								{
+									"key": "search_field",
+									"value": "test"
+								},
+								{
+									"key": "type",
+									"value": "other"
+								},
+								{
+									"key": "language",
+									"value": "it",
+									"description": "it|sq"
+								},
+								{
+									"key": "brand",
+									"value": "16"
+								},
+								{
+									"key": "model",
+									"value": "22"
+								},
+								{
+									"key": "version",
+									"value": "1"
+								},
+								{
+									"key": "institution",
+									"value": null
+								},
+								{
+									"key": "shipment",
+									"value": null
+								},
+								{
+									"key": "status",
+									"value": "1,2,2.1,3,4"
+								},
+								{
+									"key": "quality",
+									"value": "5c8ed1fdc11d3b5bc4387c97,5c8ed1e9c11d3b5bc4387c96,5c8ed179c11d3b5bc4387c95,5c8ed088c11d3b5bc4387c94,5c8ed05dc11d3b5bc4387c93"
+								},
+								{
+									"key": "price",
+									"value": "0,5000"
+								},
+								{
+									"key": "start_date",
+									"value": null
+								},
+								{
+									"key": "end_date",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\"part\":{\"group\":{\"description\":{\"al\":\"\",\"en\":\"\",\"it\":\"\"},\"subgroup\":{\"description\":{\"al\":\"\",\"en\":\"\",\"it\":\"\"}},\"item\":{\"positions\":{\"x\":\"\",\"y\":\"\"}}},\"title\":{\"al\":\"\",\"en\":\"\",\"it\":\"\"},\"infoCar\":{\"oemCode\":null,\"replacementCodes\":[],\"metadata\":[]},\"weight\":{\"value\":0,\"unit\":\"kg\"},\"dimensions\":{\"length\":0,\"width\":0,\"height\":0,\"unit\":\"cm\"},\"order\":{\"value\":false},\"kromeda\":[],\"images\":[\"sample0.png\",\"5bf6d725-991b-452f-a6c8-1cdfbffdc8ce2926891788010217532.jpg\",\"87c73cc2-9f65-4f5c-8573-c778da29e4af7013691150535132787.jpg\",\"77b52272-8ab1-4cbf-b782-71eb70cdfbd78064386338598814718.jpg\",\"834ccc68-ab15-4a49-83c5-52032356c5841438250962587414685.jpg\",\"h68-photo0.png\"],\"tests\":[],\"brand\":null,\"oemCodes\":[],\"status\":1,\"comment\":null,\"pra\":null,\"_id\":\"609125169f432828a7307022\",\"old_id\":\"5ea97b57c7a93b33da2d261d\",\"id_string\":\"5ea97b57c7a93b33da2d261d\",\"name\":null,\"nickname\":null,\"description\":null,\"manufacturer_code\":\"A2215401350\",\"notes\":null,\"repository_id\":\"5ddfe52653b40a7f2ada7104\",\"location_id\":\"5e2952f54e415c4ef599e7f4\",\"room_id\":\"5e2952f54e415c4ef599e7e8\",\"shelf_id\":\"5e2952f54e415c4ef599e669\",\"shelf_data\":{\"roomIndex\":1,\"locationIndex\":2,\"shelfIndex\":37,\"repo\":\"Magazina Mustafa Lohja\",\"shelf\":{\"_id\":\"5e2952f54e415c4ef599e669\",\"location_code\":\"C\",\"room_name\":\"Kati 2\",\"x\":4,\"y\":2}},\"quality\":{\"_id\":\"5c8ed1e9c11d3b5bc4387c96\",\"title\":\"Thuajse e Re\",\"rating\":4,\"value\":4,\"description\":\"4/5 Pjese e re me shenja te vogla perdorimi\",\"__v\":0},\"price\":20000,\"cost\":null,\"currency\":\"ALL\",\"shipment_id\":\"5ddfe7b053b40a7f2ada7136\",\"warranty_id\":{\"_id\":\"5c8ecf29c11d3b5bc4387c8e\",\"title\":\"2 Giorni Garanzia\",\"content\":\"2 Giorni Garanzia\",\"expire_date\":\"2021-03-18T00:00:00.000Z\",\"return_days\":172800,\"return_before_warranty\":\"2019-03-18T00:00:00.000Z\",\"language\":\"it\",\"__v\":0,\"content_document\":null},\"internal_notes\":\"\",\"institution_id\":{\"parts\":{\"new\":false,\"used\":true},\"plates\":{\"used\":9,\"remaining\":10},\"user_status\":false,\"_id\":\"5ddfe17753b40a7f2ada70ef\",\"title\":\"Pjese Kembimi Mustafai\",\"address\":\"Maminas, Tirane\",\"logo\":\"logo.png\",\"city\":\"Tirana\",\"state\":\"Albania\",\"phone\":\"355682099929\",\"website\":\"https://www.facebook.com/pjesekembimimustafai/\",\"type\":\"Pjese Kembimi\",\"__v\":0,\"cars\":[{\"_id\":\"61151f807f9bbf58ad24214d\",\"brand\":\"5f9699e4d412bf1874c28883\",\"model\":\"5f969b5fe009c420103ad97a\",\"version\":\"5f969bd1e009c420103afec9\"},{\"_id\":\"61151f807f9bbf58ad24214e\",\"brand\":\"5f9699e4d412bf1874c28883\",\"model\":\"5f969b5fe009c420103ad97a\",\"version\":\"5f969bd1e009c420103afeca\"},{\"_id\":\"61151f807f9bbf58ad24214f\",\"brand\":\"5f9699e4d412bf1874c28883\",\"model\":\"5f969b5fe009c420103ad97a\",\"version\":\"5f969bd1e009c420103afecb\"},{\"_id\":\"61151f807f9bbf58ad242150\",\"brand\":\"5f9699e4d412bf1874c28883\",\"model\":\"5f969b5fe009c420103ad97a\",\"version\":\"5f969bd1e009c420103afecc\"},{\"_id\":\"61151f807f9bbf58ad242151\",\"brand\":\"5f9699e4d412bf1874c28883\",\"model\":\"5f969b5fe009c420103ad97a\",\"version\":\"5f969bd1e009c420103afecd\"},{\"_id\":\"61151f807f9bbf58ad242152\",\"brand\":\"5f9699e4d412bf1874c28883\",\"model\":\"5f969b5fe009c420103ad986\",\"version\":\"5f969bd1e009c420103aff80\"}]},\"quantity\":1,\"approving_user\":\"5cb9d33026612157b1d61cd7\",\"date_created\":\"2021-05-04T10:42:30.495Z\",\"movement_history\":[],\"__v\":0},\"imagesToDelete\":[],\"infoCar\":{\"code\":null,\"changeInfoCarCode\":false}}",
+									"type": "text"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/AmeraldoHidri/Desktop/sample0.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/part/edit?id=609125169f432828a7307022",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"edit"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "609125169f432828a7307022"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"parts\": [\n\t\t\"5eb16460966faf77ade9d1b0\",\n\t\t\"5eb16505966faf77ade9d1b5\"\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/part/inventory/export",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"inventory",
+								"export"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changeLocation",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"repository_id\": \"5eb3f64a966faf77ade9d238\",\r\n    \"location_id\": \"5eb3f64a966faf77ade9d23a\",\r\n    \"room_id\": \"5eb3f64a966faf77ade9d239\",\r\n    \"shelf_id\": \"5eb3f64a966faf77ade9d236\",\r\n    \"parts_ids\": [\"5f11c05b39fe110b1a350cce\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/part/location?mobile=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"location"
+							],
+							"query": [
+								{
+									"key": "mobile",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changePrice",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price\": 200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/part/price?id=5eb3d9ef966faf77ade9d223",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"price"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5eb3d9ef966faf77ade9d223"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "moveToDamaged",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part/damaged/{{partId}}?user_id={{userId}}&institution_id={{institutionId}}&source=inventory",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"damaged",
+								"{{partId}}"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{userId}}"
+								},
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "source",
+									"value": "inventory"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "moveToLost",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part/lost/{{partId}}?user_id={{userId}}&institution_id={{institutionId}}&source=inventory",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"lost",
+								"{{partId}}"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{userId}}"
+								},
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "source",
+									"value": "inventory"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "moveToRecycled",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part/recycled/{{partId}}?user_id={{userId}}&institution_id={{institutionId}}&source=inventory",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"recycled",
+								"{{partId}}"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{userId}}"
+								},
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "source",
+									"value": "inventory"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeApplicability",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part/applicability?id=615708770a7cac046bb050da",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"applicability"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "615708770a7cac046bb050da"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sales",
+			"item": [
+				{
+					"name": "Sell",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"price\": 1,\n\t\"cash\": 1,\n\t\"notes\": \"\",\n\t\"user_id\": \"\",\n\t\"client_id\": \"\",\n\t\"part_id\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sale/new",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sale",
+								"new"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/client?role={{role}}&institution_id={{institutionId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetClient",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/client?id=5ed8c04729e3f17655d2da47",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5ed8c04729e3f17655d2da47"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateClient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"name\": \"\",\r\n    \"surname\": \"\",\r\n    \"id\": \"\",\r\n    \"email\": \"\",\r\n    \"phone\": \"\",\r\n    \"address\": \"\",\r\n    \"comment\": \"\",\r\n    \"institution\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditClient",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"name\": \"\",\r\n    \"surname\": \"\",\r\n    \"id\": \"\",\r\n    \"email\": \"\",\r\n    \"phone\": \"\",\r\n    \"address\": \"\",\r\n    \"comment\": \"\",\r\n    \"institution\": \"\",\r\n    \"cars\" : [ \r\n        {\r\n            \"version\" : {\r\n                \"displacement\" : {\r\n                    \"cc\" : 1598\r\n                },\r\n                \"power\" : {\r\n                    \"kw\" : 88\r\n                },\r\n                \"_id\" : \"5f969bcfe009c420103ade9d\",\r\n                \"brandCode\" : 1,\r\n                \"modelCode\" : 29,\r\n                \"versionCode\" : 3,\r\n                \"description\" : \"1.6 T. Spark L Ber. 5p/b/1598cc\",\r\n                \"startingDate\" : \"1999-02-28T23:00:00.000Z\",\r\n                \"endingDate\" : \"2001-12-31T00:00:00.000Z\",\r\n                \"chassisCode\" : \"B2V\",\r\n                \"numberOfDoors\" : 5,\r\n                \"supplyCode\" : \"B\",\r\n                \"tractionCode\" : \"A\",\r\n                \"fullDescription\" : \"1.6 T. Spark L Ber. 5p/b/1598cc\",\r\n                \"engineCode\" : \"AR67601\"\r\n            },\r\n            \"main\" : false,\r\n            \"_id\" : \"620b98350dea9822e8c4d04d\",\r\n            \"brand\" : {\r\n                \"_id\" : \"5f9699e4d412bf1874c2887a\",\r\n                \"categoryCode\" : 1,\r\n                \"brandCode\" : 1,\r\n                \"title\" : \"ALFA ROMEO\"\r\n            },\r\n            \"model\" : {\r\n                \"_id\" : \"5f969b5fe009c420103ad77a\",\r\n                \"brandCode\" : 1,\r\n                \"modelCode\" : 29,\r\n                \"description\" : \"146\",\r\n                \"fullDescription\" : \"146 (03/99>12/01<)\",\r\n                \"startingDate\" : \"1999-03-01T00:00:00.000Z\",\r\n                \"endingDate\" : \"2001-12-01T00:00:00.000Z\"\r\n            },\r\n            \"vin\" : \"ZAR937000001234\",\r\n            \"notes\" : \"random notes\",\r\n            \"specifications\" : [ \r\n                {\r\n                    \"_id\" : \"620b98350dea9822e8c4d04e\",\r\n                    \"key\" : \"Color\",\r\n                    \"value\" : \"Black\"\r\n                }, \r\n                {\r\n                    \"_id\" : \"620b98350dea9822e8c4d04f\",\r\n                    \"key\" : \"Condition\",\r\n                    \"value\" : \"Good\"\r\n                }\r\n            ]\r\n        }, \r\n        {\r\n            \"version\" : {\r\n                \"displacement\" : {\r\n                    \"cc\" : 1995\r\n                },\r\n                \"power\" : {\r\n                    \"kw\" : 95\r\n                },\r\n                \"_id\" : \"5f969bd0e009c420103ae4b9\",\r\n                \"brandCode\" : 4,\r\n                \"modelCode\" : 31,\r\n                \"versionCode\" : 4,\r\n                \"description\" : \"118i Ber. 5p/b/1995cc\",\r\n                \"startingDate\" : \"2004-09-30T22:00:00.000Z\",\r\n                \"endingDate\" : \"2007-03-30T22:00:00.000Z\",\r\n                \"chassisCode\" : \"B2V\",\r\n                \"numberOfDoors\" : 5,\r\n                \"supplyCode\" : \"B\",\r\n                \"tractionCode\" : \"P\",\r\n                \"fullDescription\" : \"118i Ber. 5p/b/1995cc\",\r\n                \"engineCode\" : \"N46B20B\"\r\n            },\r\n            \"main\" : false,\r\n            \"_id\" : \"620b98350dea9822e8c4d050\",\r\n            \"brand\" : {\r\n                \"_id\" : \"5f9699e4d412bf1874c2887c\",\r\n                \"categoryCode\" : 1,\r\n                \"brandCode\" : 4,\r\n                \"title\" : \"BMW\"\r\n            },\r\n            \"model\" : {\r\n                \"_id\" : \"5f969b5fe009c420103ad7ef\",\r\n                \"brandCode\" : 4,\r\n                \"modelCode\" : 31,\r\n                \"description\" : \"Serie 1 (E87)\",\r\n                \"fullDescription\" : \"Serie 1 (E87) (09/04>03/07<)\",\r\n                \"startingDate\" : \"2004-09-01T00:00:00.000Z\",\r\n                \"endingDate\" : \"2007-03-01T00:00:00.000Z\"\r\n            },\r\n            \"vin\" : \"BMW401000012314\",\r\n            \"notes\" : \"asdasd test\",\r\n            \"specifications\" : [ \r\n                {\r\n                    \"_id\" : \"620b98350dea9822e8c4d051\",\r\n                    \"key\" : \"Color\",\r\n                    \"value\" : \"White\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client?id=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteClient",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client?id=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "InfoCar",
+			"item": [
+				{
+					"name": "test",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/info-car/search?code=K05074959AB&populated=false",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"info-car",
+								"search"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "K05074959AB",
+									"description": "1j6945096  5802FG"
+								},
+								{
+									"key": "populated",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetInfoCar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/info-car/id/5fba55be0307d77f002393d4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"info-car",
+								"id",
+								"5fba55be0307d77f002393d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLicensePlate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/info-car/plate/FL756TR",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"info-car",
+								"plate",
+								"FL756TR"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBrands",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/info-car/brands?category=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"info-car",
+								"brands"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetModels",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/info-car/models?brand_code=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"info-car",
+								"models"
+							],
+							"query": [
+								{
+									"key": "brand_code",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetVersions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/info-car/versions?brand_code=1&model_code=16",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"info-car",
+								"versions"
+							],
+							"query": [
+								{
+									"key": "brand_code",
+									"value": "1"
+								},
+								{
+									"key": "model_code",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchParts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/info-car/parts?title=far&language=it",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"info-car",
+								"parts"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "far"
+								},
+								{
+									"key": "language",
+									"value": "it"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/info-car/part/5fba55be0307d77f002393d4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"info-car",
+								"part",
+								"5fba55be0307d77f002393d4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Part Requests",
+			"item": [
+				{
+					"name": "ActiveRequests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part-request?category=1&status=1,2&institution_id={{institutionId}}&role={{role}}&page=1&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part-request"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "1"
+								},
+								{
+									"key": "status",
+									"value": "1,2"
+								},
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConfirmedRequests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part-request?category=2&status=1,2&institution_id={{institutionId}}&role={{role}}&page=1&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part-request"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "2"
+								},
+								{
+									"key": "status",
+									"value": "1,2"
+								},
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OtherRequests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part-request?category=3&status=1,2,3,4&institution_id={{institutionId}}&role={{role}}&page=1&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part-request"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "3"
+								},
+								{
+									"key": "status",
+									"value": "1,2,3,4"
+								},
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RejectRequest",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"institution\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/part-request/reject?id=_ObjectId_",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part-request",
+								"reject"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "_ObjectId_",
+									"description": "request's object id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Sale",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"institution\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/part-request/confirm-sale?id=__ObjectId__",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part-request",
+								"confirm-sale"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "__ObjectId__",
+									"description": "request's object id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Offer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\n  \"imagesToDelete\": [],\n  \"institutionId\": \"\",\n  \"offer\": {\n    \"proposed\": true,\n    \"price\": 100,\n    \"fee\": 100,\n    \"currency\": \"ALL|EUR\",\n    \"description\": \"\",\n    \"images\": [\n      \"sample1.jpg\"\n    ]\n  }\n}",
+									"type": "text"
+								},
+								{
+									"key": "request-images",
+									"type": "file",
+									"src": "/C:/Users/AmeraldoHidri/Desktop/sample1.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/part-request/offer?request_id=_ObjectId_",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part-request",
+								"offer"
+							],
+							"query": [
+								{
+									"key": "request_id",
+									"value": "_ObjectId_"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Offer",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part-request/offer?request_id=_ObjectId_&institution_id=_ObjectId_",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part-request",
+								"offer"
+							],
+							"query": [
+								{
+									"key": "request_id",
+									"value": "_ObjectId_"
+								},
+								{
+									"key": "institution_id",
+									"value": "_ObjectId_"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Return",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"notes\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/part-request/confirm-return?id=_ObjectId_",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part-request",
+								"confirm-return"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "_ObjectId_",
+									"description": "request's object id"
+								}
+							]
+						},
+						"description": "    "
+					},
+					"response": []
+				},
+				{
+					"name": "Refuse Return",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"notes\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/part-request/refuse-return?id=_ObjectId_",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part-request",
+								"refuse-return"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "_ObjectId_",
+									"description": "request's object id"
+								}
+							]
+						},
+						"description": "    "
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Custom Shop",
+			"item": [
+				{
+					"name": "Parts",
+					"item": [
+						{
+							"name": "GetParts",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYzNzNiYmJhMzllYzFmNDhhYWM0YThkOSIsInVzZXJuYW1lIjoibXVsdGlicmV2ZXMiLCJwYXNzd29yZCI6IiQyYSQxMCRjRVJzN3lzV1RQaXJyMEpKVmQ0L2suN1FEaWE3djlOZklFYmtFaVBleWgzSUZILzlqZ2JldSIsImluc3RpdHV0aW9uX2lkIjoiNjAxYmRjY2NhYjE4MzU0YmJlMTVjMzA0IiwiX192IjowfSwiaWF0IjoxNjY4NTI5MDk2fQ.9U0wG2dfuWIbkVBcCL2BJ-gIRosX8PSHpvjjBHm4XkE",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/custom-shop/parts?limit=10&skip=0",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"custom-shop",
+										"parts"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "start_date",
+											"value": "2021-11-1",
+											"disabled": true
+										},
+										{
+											"key": "end_date",
+											"value": "2021-11-25",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SearchParts",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxNDJmZGQ4YmU3NjM5N2E0YmI0ZDU0YiIsInVzZXJuYW1lIjoiYWxwb250ZSIsInBhc3N3b3JkIjoiJDJiJDEwJDl5NjhEODFQaDhFeEJOWDRNMkZHVWVnRmo3WlpEZElnV2Q1SmNIeWRFMC8wNVFQOWZBaHJHIiwiaW5zdGl0dXRpb25faWQiOiI2MDkwODE3OTlmNDMyODI4YTczMDY5M2QiLCJfX3YiOjB9LCJpYXQiOjE2MzIzODI5ODN9.nPXjBfggoY_ytquO4tqDXT-3KSAHcJTfJioXedUk0-c",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/custom-shop/parts/search/?limit=10&skip=0&start_date=2021-11-1&end_date=2021-11-25",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"custom-shop",
+										"parts",
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "start_date",
+											"value": "2021-11-1"
+										},
+										{
+											"key": "end_date",
+											"value": "2021-11-25"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPart",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxNDJmZGQ4YmU3NjM5N2E0YmI0ZDU0YiIsInVzZXJuYW1lIjoiYWxwb250ZSIsInBhc3N3b3JkIjoiJDJiJDEwJDl5NjhEODFQaDhFeEJOWDRNMkZHVWVnRmo3WlpEZElnV2Q1SmNIeWRFMC8wNVFQOWZBaHJHIiwiaW5zdGl0dXRpb25faWQiOiI2MDkwODE3OTlmNDMyODI4YTczMDY5M2QiLCJfX3YiOjB9LCJpYXQiOjE2MzIzODI5ODN9.nPXjBfggoY_ytquO4tqDXT-3KSAHcJTfJioXedUk0-c",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/custom-shop/parts/614b7ae8be76397a4bb6c82b",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"custom-shop",
+										"parts",
+										"614b7ae8be76397a4bb6c82b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SellPart",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxNDJmZGQ4YmU3NjM5N2E0YmI0ZDU0YiIsInVzZXJuYW1lIjoiYWxwb250ZSIsInBhc3N3b3JkIjoiJDJiJDEwJDl5NjhEODFQaDhFeEJOWDRNMkZHVWVnRmo3WlpEZElnV2Q1SmNIeWRFMC8wNVFQOWZBaHJHIiwiaW5zdGl0dXRpb25faWQiOiI2MDkwODE3OTlmNDMyODI4YTczMDY5M2QiLCJfX3YiOjB9LCJpYXQiOjE2MzIzODI5ODN9.nPXjBfggoY_ytquO4tqDXT-3KSAHcJTfJioXedUk0-c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"clientId\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/custom-shop/parts/614b7ae8be76397a4bb6c82b/shop",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"custom-shop",
+										"parts",
+										"614b7ae8be76397a4bb6c82b",
+										"shop"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ReturnPart",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxNDJmZGQ4YmU3NjM5N2E0YmI0ZDU0YiIsInVzZXJuYW1lIjoiYWxwb250ZSIsInBhc3N3b3JkIjoiJDJiJDEwJDl5NjhEODFQaDhFeEJOWDRNMkZHVWVnRmo3WlpEZElnV2Q1SmNIeWRFMC8wNVFQOWZBaHJHIiwiaW5zdGl0dXRpb25faWQiOiI2MDkwODE3OTlmNDMyODI4YTczMDY5M2QiLCJfX3YiOjB9LCJpYXQiOjE2MzIzODI5ODN9.nPXjBfggoY_ytquO4tqDXT-3KSAHcJTfJioXedUk0-c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/custom-shop/parts/614b7ae8be76397a4bb6c82b/shop",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"custom-shop",
+										"parts",
+										"614b7ae8be76397a4bb6c82b",
+										"shop"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Clients",
+					"item": [
+						{
+							"name": "GetClients",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxNDJmZGQ4YmU3NjM5N2E0YmI0ZDU0YiIsInVzZXJuYW1lIjoiYWxwb250ZSIsInBhc3N3b3JkIjoiJDJiJDEwJDl5NjhEODFQaDhFeEJOWDRNMkZHVWVnRmo3WlpEZElnV2Q1SmNIeWRFMC8wNVFQOWZBaHJHIiwiaW5zdGl0dXRpb25faWQiOiI2MDkwODE3OTlmNDMyODI4YTczMDY5M2QiLCJfX3YiOjB9LCJpYXQiOjE2MzIzODI5ODN9.nPXjBfggoY_ytquO4tqDXT-3KSAHcJTfJioXedUk0-c",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/custom-shop/clients",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"custom-shop",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddClient",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxNDJmZGQ4YmU3NjM5N2E0YmI0ZDU0YiIsInVzZXJuYW1lIjoiYWxwb250ZSIsInBhc3N3b3JkIjoiJDJiJDEwJDl5NjhEODFQaDhFeEJOWDRNMkZHVWVnRmo3WlpEZElnV2Q1SmNIeWRFMC8wNVFQOWZBaHJHIiwiaW5zdGl0dXRpb25faWQiOiI2MDkwODE3OTlmNDMyODI4YTczMDY5M2QiLCJfX3YiOjB9LCJpYXQiOjE2MzIzODI5ODN9.nPXjBfggoY_ytquO4tqDXT-3KSAHcJTfJioXedUk0-c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Testclient\",\r\n    \"surname\": \"Testclient\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/custom-shop/clients",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"custom-shop",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EditClient",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxNDJmZGQ4YmU3NjM5N2E0YmI0ZDU0YiIsInVzZXJuYW1lIjoiYWxwb250ZSIsInBhc3N3b3JkIjoiJDJiJDEwJDl5NjhEODFQaDhFeEJOWDRNMkZHVWVnRmo3WlpEZElnV2Q1SmNIeWRFMC8wNVFQOWZBaHJHIiwiaW5zdGl0dXRpb25faWQiOiI2MDkwODE3OTlmNDMyODI4YTczMDY5M2QiLCJfX3YiOjB9LCJpYXQiOjE2MzIzODI5ODN9.nPXjBfggoY_ytquO4tqDXT-3KSAHcJTfJioXedUk0-c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Testclient\",\r\n    \"surname\": \"Testclient1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/custom-shop/clients/614c3252be76397a4bb6d4c8",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"custom-shop",
+										"clients",
+										"614c3252be76397a4bb6d4c8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteClient",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxNDJmZGQ4YmU3NjM5N2E0YmI0ZDU0YiIsInVzZXJuYW1lIjoiYWxwb250ZSIsInBhc3N3b3JkIjoiJDJiJDEwJDl5NjhEODFQaDhFeEJOWDRNMkZHVWVnRmo3WlpEZElnV2Q1SmNIeWRFMC8wNVFQOWZBaHJHIiwiaW5zdGl0dXRpb25faWQiOiI2MDkwODE3OTlmNDMyODI4YTczMDY5M2QiLCJfX3YiOjB9LCJpYXQiOjE2MzIzODI5ODN9.nPXjBfggoY_ytquO4tqDXT-3KSAHcJTfJioXedUk0-c",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/custom-shop/clients/614c3252be76397a4bb6d4c8",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"custom-shop",
+										"clients",
+										"614c3252be76397a4bb6d4c8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"multibreves\",\r\n    \"password\": \"Multibreves_Api!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/custom-shop/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"custom-shop",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"multibreves\",\r\n    \"password\": \"Multibreves_Api!\",\r\n    \"institutions\": [\"601bdcccab18354bbe15c304\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/custom-shop/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"custom-shop",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicle Entry",
+			"item": [
+				{
+					"name": "GetCar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/car/?id=60799fb5880c372dd059aa50",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"car",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "60799fb5880c372dd059aa50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/car/?id=60799fb5880c372dd059aa50",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"car",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "60799fb5880c372dd059aa50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateCar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "car-photos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "car-documents",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "car-videos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "data",
+									"value": "{\n  \"institution_id\": \"5ddfe17753b40a7f2ada70ef\",\n  \"brand\": {\n    \"_id\": \"5f9699e4d412bf1874c2887a\",\n    \"categoryCode\": 1,\n    \"brandCode\": 1,\n    \"title\": \"ALFA ROMEO\",\n    \"__v\": 0\n  },\n  \"model\": {\n    \"_id\": \"5f969b5fe009c420103ad781\",\n    \"brandCode\": 1,\n    \"modelCode\": 36,\n    \"description\": \"147 (W8)\",\n    \"fullDescription\": \"147 (W8) (10/04>07/11<)\",\n    \"startingDate\": \"2004-10-01T00:00:00.000Z\",\n    \"endingDate\": \"2011-07-01T00:00:00.000Z\",\n    \"__v\": 0\n  },\n  \"version\": {\n    \"displacement\": {\n      \"cc\": 1598\n    },\n    \"power\": {\n      \"kw\": 77\n    },\n    \"_id\": \"5f969bcfe009c420103adf14\",\n    \"brandCode\": 1,\n    \"modelCode\": 36,\n    \"versionCode\": 1,\n    \"description\": \"1.6 16V TS(77Kw)Distinct.Ber.3p/b/1598cc\",\n    \"startingDate\": \"2004-09-30T22:00:00.000Z\",\n    \"endingDate\": \"2006-09-29T22:00:00.000Z\",\n    \"chassisCode\": \"B2V\",\n    \"numberOfDoors\": 3,\n    \"supplyCode\": \"B\",\n    \"tractionCode\": \"A\",\n    \"fullDescription\": \"1.6 16V TS (77Kw) Distinctive Ber. 3p/b/1598cc\",\n    \"__v\": 0,\n    \"engineCode\": \"AR37203\"\n  },\n  \"targa\": \"\",\n  \"vin\": \"\",\n  \"transmissionType\": \"\",\n  \"transmissionLayout\": \"\",\n  \"externalColor\": \"\",\n  \"internalColor\": \"\",\n  \"internalState\": \"\",\n  \"vehicleCondition\": \"\",\n  \"frame\": \"afasgasg\",\n  \"pra\": \"\",\n  \"km\": \"\",\n  \"location\": \"\",\n  \"notes\": \"\",\n  \"workingEngine\": true,\n  \"parts\": {\n    \"ttc\": [\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Paraurti anteriore\",\n          \"sq\": \"Parakolp para\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Paraurti ant.\",\n          \"sq\": \"Paraurti. para\"\n        },\n        \"_id\": \"5f969ec616d7942548e493c3\",\n        \"partCode\": 1981,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Lamierati esterni\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Cofano ant.\",\n          \"sq\": \"Kofano. para\"\n        },\n        \"_id\": \"5f969ec516d7942548e4892b\",\n        \"partCode\": 556,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Cristalli\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Parabrezza\",\n          \"sq\": \"Xham para\"\n        },\n        \"_id\": \"5f969ec616d7942548e497dc\",\n        \"partCode\": 1918,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Motore e cambio con supporti\",\n          \"sq\": \"Motorr. Kambio dhe suporte\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Radiatore\",\n          \"sq\": \"Radiator\"\n        },\n        \"_id\": \"5f969ec616d7942548e492ca\",\n        \"partCode\": 2383,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Alimentazione e scarico\",\n          \"sq\": \"Motorr. Kambio dhe suporte\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Scambiatore aria/aria\",\n          \"sq\": \"Interkuler\"\n        },\n        \"_id\": \"5f969ec616d7942548e4998d\",\n        \"partCode\": 2721,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Motore e cambio con supporti\",\n          \"sq\": \"Motorr. Kambio dhe suporte\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Radiatore olio\",\n          \"sq\": \"Radiator per vajin\"\n        },\n        \"_id\": \"5f969ec616d7942548e49279\",\n        \"partCode\": 2392,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Cambio e trasmissioni\",\n          \"sq\": \"Kambio dhe trasmisioni\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Radiatore olio cambio automatico\",\n          \"sq\": \"Radiator vaji per kambio automatike\"\n        },\n        \"_id\": \"5f969ec616d7942548e49ae8\",\n        \"partCode\": 5562,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Climatizzazione\",\n          \"sq\": \"Motorr. Kambio dhe suporte\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Condensatore a/c\",\n          \"sq\": \"Kondesator a/c\"\n        },\n        \"_id\": \"5f969ec616d7942548e49f16\",\n        \"partCode\": 3724,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Climatizzazione\",\n          \"sq\": \"Klima\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Deumidificatore a/c\",\n          \"sq\": \"Thares per kondicionerin\"\n        },\n        \"_id\": \"5f969ec616d7942548e49f1c\",\n        \"partCode\": 818,\n        \"selected\": true\n      }\n    ],\n    \"tll\": [\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Fanaleria\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Proiettore\",\n          \"sq\": \"Fener\"\n        },\n        \"_id\": \"5f969ec516d7942548e48f20\",\n        \"partCode\": 2275,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Lamierati esterni\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Parafango ant.\",\n          \"sq\": \"Parafango. para\"\n        },\n        \"_id\": \"5f969ec516d7942548e48ca1\",\n        \"partCode\": 1935,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Sospensioni\",\n          \"sq\": \"Sospensionet\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Ammortizzatore ant.\",\n          \"sq\": \"Amortizator. para\"\n        },\n        \"_id\": \"5f969ec616d7942548e49648\",\n        \"partCode\": 86,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Sospensioni\",\n          \"sq\": \"Sospensionet\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Molla sosp. ant.\",\n          \"sq\": \"Suste per sospensionet. para\"\n        },\n        \"_id\": \"5f969ec616d7942548e49610\",\n        \"partCode\": 4980,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Cambio e trasmissioni\",\n          \"sq\": \"Kambio dhe trasmisioni\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Semialbero ant.\",\n          \"sq\": \"Semiaksi. para\"\n        },\n        \"_id\": \"5f969ec616d7942548e49b18\",\n        \"partCode\": 2837,\n        \"selected\": true\n      }\n    ],\n    \"trr\": [\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Fanaleria\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Proiettore\",\n          \"sq\": \"Fener\"\n        },\n        \"_id\": \"5f969ec516d7942548e48f20\",\n        \"partCode\": 2275,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Lamierati esterni\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Parafango ant.\",\n          \"sq\": \"Parafango. para\"\n        },\n        \"_id\": \"5f969ec516d7942548e48ca1\",\n        \"partCode\": 1935,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Sospensioni\",\n          \"sq\": \"Sospensionet\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Ammortizzatore ant.\",\n          \"sq\": \"Amortizator. para\"\n        },\n        \"_id\": \"5f969ec616d7942548e49648\",\n        \"partCode\": 86,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Sospensioni\",\n          \"sq\": \"Sospensionet\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Molla sosp. ant.\",\n          \"sq\": \"Suste per sospensionet. para\"\n        },\n        \"_id\": \"5f969ec616d7942548e49610\",\n        \"partCode\": 4980,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Cambio e trasmissioni\",\n          \"sq\": \"Kambio dhe trasmisioni\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Semialbero ant.\",\n          \"sq\": \"Semiaksi. para\"\n        },\n        \"_id\": \"5f969ec616d7942548e49b18\",\n        \"partCode\": 2837,\n        \"selected\": true\n      }\n    ],\n    \"tl\": [\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Cristalli\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Retrovisore est.\",\n          \"sq\": \"Pasqyre e jashtme\"\n        },\n        \"_id\": \"5f969ec616d7942548e497db\",\n        \"partCode\": 2411,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Lamierati esterni\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Porta ant.\",\n          \"sq\": \"Dera. para\"\n        },\n        \"_id\": \"5f969ec516d7942548e48c9e\",\n        \"partCode\": 2168,\n        \"selected\": true\n      }\n    ],\n    \"tr\": [\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Cristalli\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Retrovisore est.\",\n          \"sq\": \"Pasqyre e jashtme\"\n        },\n        \"_id\": \"5f969ec616d7942548e497db\",\n        \"partCode\": 2411,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Lamierati esterni\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Porta ant.\",\n          \"sq\": \"Dera. para\"\n        },\n        \"_id\": \"5f969ec516d7942548e48c9e\",\n        \"partCode\": 2168,\n        \"selected\": true\n      }\n    ],\n    \"tc\": [\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Sterzo\",\n          \"sq\": \"Timon\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Scatola sterzo\",\n          \"sq\": \"Grup timoni\"\n        },\n        \"_id\": \"5f969ec616d7942548e49533\",\n        \"partCode\": 2731,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Sterzo\",\n          \"sq\": \"Timon\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Dispositivo airbag lato guida\",\n          \"sq\": \"Airbag per krahun e shoferit\"\n        },\n        \"_id\": \"5f969ec616d7942548e4951f\",\n        \"partCode\": 3814,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Sterzo\",\n          \"sq\": \"Timon\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Volante\",\n          \"sq\": \"Timon\"\n        },\n        \"_id\": \"5f969ec616d7942548e49530\",\n        \"partCode\": 3720,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Rivestimenti interni e parti interne\",\n          \"sq\": \"Pajisje te brendshme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Cruscotto\",\n          \"sq\": \"Kroskot\"\n        },\n        \"_id\": \"5f969ec616d7942548e49d7e\",\n        \"partCode\": 1385,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Rivestimenti interni e parti interne\",\n          \"sq\": \"Pajisje te brendshme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Portaoggetti cruscotto\",\n          \"sq\": \"Kroskot\"\n        },\n        \"_id\": \"5f969ec616d7942548e49da3\",\n        \"partCode\": 2489,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Rivestimenti interni e parti interne\",\n          \"sq\": \"Pajisje te brendshme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Display navigatore satellitare\",\n          \"sq\": \"Navigator satelitor\"\n        },\n        \"_id\": \"5f969ec616d7942548e49cf6\",\n        \"partCode\": 3425,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Rivestimenti interni e parti interne\",\n          \"sq\": \"Pajisje te brendshme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Autoradio\",\n          \"sq\": \"Autoradio\"\n        },\n        \"_id\": \"5f969ec616d7942548e49d98\",\n        \"partCode\": 5626,\n        \"selected\": true\n      }\n    ],\n    \"bc\": [\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Lamierati esterni\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Tetto cabina\",\n          \"sq\": \"Tavani kabines\"\n        },\n        \"_id\": \"5f969ec516d7942548e48ccd\",\n        \"partCode\": 3449,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Lamierati esterni\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Capote/hard-top\",\n          \"sq\": \"Kapot hardtop\"\n        },\n        \"_id\": \"5f969ec516d7942548e48c86\",\n        \"partCode\": 381,\n        \"selected\": true\n      }\n    ],\n    \"bl\": [\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Lamierati esterni\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Parafango post.\",\n          \"sq\": \"Parafango. pas\"\n        },\n        \"_id\": \"5f969ec516d7942548e48caf\",\n        \"partCode\": 1945,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Fanaleria\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Fanale post.\",\n          \"sq\": \"Stop i pasem\"\n        },\n        \"_id\": \"5f969ec516d7942548e48f5c\",\n        \"partCode\": 868,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Sospensioni\",\n          \"sq\": \"Sospensionet\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Ammortizzatore post.\",\n          \"sq\": \"Amortizator. pas\"\n        },\n        \"_id\": \"5f969ec616d7942548e49646\",\n        \"partCode\": 97,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Sospensioni\",\n          \"sq\": \"Sospensionet\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Molla sosp. post.\",\n          \"sq\": \"Suste per sospensionet. pas\"\n        },\n        \"_id\": \"5f969ec616d7942548e49617\",\n        \"partCode\": 4981,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Lamierati esterni\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Porta post.\",\n          \"sq\": \"Dera. pas\"\n        },\n        \"_id\": \"5f969ec516d7942548e48cae\",\n        \"partCode\": 2187,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Sospensioni\",\n          \"sq\": \"Sospensionet\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Semialbero post.\",\n          \"sq\": \"Semiaksi. pas\"\n        },\n        \"_id\": \"5f969ec616d7942548e49600\",\n        \"partCode\": 2842,\n        \"selected\": true\n      }\n    ],\n    \"br\": [\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Lamierati esterni\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Parafango post.\",\n          \"sq\": \"Parafango. pas\"\n        },\n        \"_id\": \"5f969ec516d7942548e48caf\",\n        \"partCode\": 1945,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Fanaleria\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Fanale post.\",\n          \"sq\": \"Stop i pasem\"\n        },\n        \"_id\": \"5f969ec516d7942548e48f5c\",\n        \"partCode\": 868,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Sospensioni\",\n          \"sq\": \"Sospensionet\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Ammortizzatore post.\",\n          \"sq\": \"Amortizator. pas\"\n        },\n        \"_id\": \"5f969ec616d7942548e49646\",\n        \"partCode\": 97,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Sospensioni\",\n          \"sq\": \"Sospensionet\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Molla sosp. post.\",\n          \"sq\": \"Suste per sospensionet. pas\"\n        },\n        \"_id\": \"5f969ec616d7942548e49617\",\n        \"partCode\": 4981,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Lamierati esterni\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Porta post.\",\n          \"sq\": \"Dera. pas\"\n        },\n        \"_id\": \"5f969ec516d7942548e48cae\",\n        \"partCode\": 2187,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Sospensioni\",\n          \"sq\": \"Sospensionet\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Semialbero post.\",\n          \"sq\": \"Semiaksi. pas\"\n        },\n        \"_id\": \"5f969ec616d7942548e49600\",\n        \"partCode\": 2842,\n        \"selected\": true\n      }\n    ],\n    \"cc\": [\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Motore e cambio con supporti\",\n          \"sq\": \"Motorr. Kambio dhe suporte\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Motorino avviamento\",\n          \"sq\": \"Motorino per ndezjen\"\n        },\n        \"_id\": \"5f969ec616d7942548e492c9\",\n        \"partCode\": 1777,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Motore e cambio con supporti\",\n          \"sq\": \"Motorr. Kambio dhe suporte\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Alternatore\",\n          \"sq\": \"Alternator\"\n        },\n        \"_id\": \"5f969ec616d7942548e492af\",\n        \"partCode\": 57,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Climatizzazione\",\n          \"sq\": \"Motorr. Kambio dhe suporte\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Compressore a/c\",\n          \"sq\": \"Kompresor a/c\"\n        },\n        \"_id\": \"5f969ec616d7942548e49f1d\",\n        \"partCode\": 576,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Alimentazione e scarico\",\n          \"sq\": \"Shkarkimi dhe injeksioni\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Turbocompressore\",\n          \"sq\": \"Turbokompresor\"\n        },\n        \"_id\": \"5f969ec616d7942548e4998c\",\n        \"partCode\": 3690,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Motore e cambio con supporti\",\n          \"sq\": \"Motorr. Kambio dhe suporte\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Motore compl.\",\n          \"sq\": \"Motorr i kompletuar\"\n        },\n        \"_id\": \"5f969ec616d7942548e492b1\",\n        \"partCode\": 1771,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Motore e cambio con supporti\",\n          \"sq\": \"Motorr. Kambio dhe suporte\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Cambio compl.\",\n          \"sq\": \"Kambio e plote\"\n        },\n        \"_id\": \"5f969ec616d7942548e492c5\",\n        \"partCode\": 364,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Cambio e trasmissioni\",\n          \"sq\": \"Kambio dhe trasmisioni\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Albero trasmissione ant.\",\n          \"sq\": \"Bosht transmisioni. para\"\n        },\n        \"_id\": \"5f969ec616d7942548e49b42\",\n        \"partCode\": 47,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Cambio e trasmissioni\",\n          \"sq\": \"Kambio dhe trasmisioni\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Albero trasmissione centr.\",\n          \"sq\": \"Bosht transmisioni. qendror\"\n        },\n        \"_id\": \"5f969ec616d7942548e49ab1\",\n        \"partCode\": 50,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Cambio e trasmissioni\",\n          \"sq\": \"Kambio dhe trasmisioni\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Albero trasmissione post. compl.\",\n          \"sq\": \"Bosht transimisioni. pas. i kompletuar\"\n        },\n        \"_id\": \"5f969ec616d7942548e49ad5\",\n        \"partCode\": 5248,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Cambio e trasmissioni\",\n          \"sq\": \"Kambio dhe trasmisioni\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Differenziale ant. compl.\",\n          \"sq\": \"Diferencial para. i kompletuar\"\n        },\n        \"_id\": \"5f969ec616d7942548e49b63\",\n        \"partCode\": 5494,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Cambio e trasmissioni\",\n          \"sq\": \"Kambio dhe trasmisioni\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Differenziale post.\",\n          \"sq\": \"Diferencial i pasem\"\n        },\n        \"_id\": \"5f969ec616d7942548e49b2c\",\n        \"partCode\": 3429,\n        \"selected\": true\n      }\n    ],\n    \"bbc\": [\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Lamierati esterni\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Cofano post.\",\n          \"sq\": \"Kofano. pas\"\n        },\n        \"_id\": \"5f969ec516d7942548e48c99\",\n        \"partCode\": 561,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Lamierati esterni\",\n          \"sq\": \"Flete te jashtme\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Portello post.\",\n          \"sq\": \"Dera e bagazhit\"\n        },\n        \"_id\": \"5f969ec516d7942548e48c9d\",\n        \"partCode\": 2209,\n        \"selected\": true\n      },\n      {\n        \"category\": {\n          \"en\": \"\",\n          \"it\": \"Paraurti posteriore\",\n          \"sq\": \"Parakolp pas\"\n        },\n        \"title\": {\n          \"en\": \"\",\n          \"it\": \"Paraurti post.\",\n          \"sq\": \"Paraurti. pas\"\n        },\n        \"_id\": \"5f969ec616d7942548e494b7\",\n        \"partCode\": 1992,\n        \"selected\": true\n      }\n    ]\n  },\n  \"photos\": [\n    \"5ddfe17753b40a7f2ada70ef-1361-5ml8-photo0.png\"\n  ],\n  \"document\": \"5ddfe17753b40a7f2ada70ef-1361-ixbi17dc2dd36c3.pdf\",\n  \"video-test.mp4\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/car/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"car",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditCar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "car-photos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "car-documents",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "car-videos",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "data",
+									"value": "{\n  \"photosToDelete\": [],\n  \"vehicle\": {\n    \"institution_id\": \"5ddfe17753b40a7f2ada70ef\",\n    \"brand\": {\n      \"categoryCode\": 1,\n      \"brandCode\": 159,\n      \"title\": \"AIXAM\"\n    },\n    \"model\": {\n      \"brandCode\": 159,\n      \"modelCode\": 2,\n      \"description\": \"CROSSLINE\",\n      \"fullDescription\": \"CROSSLINE (04/10>)\",\n      \"startingDate\": \"2010-04-01T00:00:00.000Z\",\n      \"endingDate\": null\n    },\n    \"version\": {\n      \"displacement\": {\n        \"cc\": 400\n      },\n      \"power\": {\n        \"kw\": 4\n      },\n      \"brandCode\": 159,\n      \"modelCode\": 2,\n      \"versionCode\": 1,\n      \"description\": \"400 Ber. 3p/d/400cc\",\n      \"startingDate\": \"2010-03-31T22:00:00.000Z\",\n      \"endingDate\": \"2010-11-30T00:00:00.000Z\",\n      \"chassisCode\": \"B2V\",\n      \"numberOfDoors\": 3,\n      \"supplyCode\": \"D\",\n      \"tractionCode\": \"A\",\n      \"fullDescription\": \"400 Ber. 3p/d/400cc\",\n      \"engineCode\": \"Z402\"\n    },\n    \"targa\": \"\",\n    \"vin\": null,\n    \"transmissionType\": \"test\",\n    \"transmissionLayout\": \"\",\n    \"externalColor\": \"\",\n    \"internalColor\": \"\",\n    \"internalState\": \"\",\n    \"vehicleCondition\": \"\",\n    \"pra\": \"\",\n    \"km\": null,\n    \"location\": \"\",\n    \"notes\": \"\",\n    \"workingEngine\": null,\n    \"parts\": {\n      \"ttc\": [\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Paraurti anteriore\",\n            \"sq\": \"Parakolp para\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Paraurti ant.\",\n            \"sq\": \"Paraurti. para\"\n          },\n          \"_id\": \"5f969ec616d7942548e493c3\",\n          \"partCode\": 1981,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Lamierati esterni\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Cofano ant.\",\n            \"sq\": \"Kofano. para\"\n          },\n          \"_id\": \"5f969ec516d7942548e4892b\",\n          \"partCode\": 556,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Cristalli\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Parabrezza\",\n            \"sq\": \"Xham para\"\n          },\n          \"_id\": \"5f969ec616d7942548e497dc\",\n          \"partCode\": 1918,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Motore e cambio con supporti\",\n            \"sq\": \"Motorr. Kambio dhe suporte\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Radiatore\",\n            \"sq\": \"Radiator\"\n          },\n          \"_id\": \"5f969ec616d7942548e492ca\",\n          \"partCode\": 2383,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Alimentazione e scarico\",\n            \"sq\": \"Motorr. Kambio dhe suporte\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Scambiatore aria/aria\",\n            \"sq\": \"Interkuler\"\n          },\n          \"_id\": \"5f969ec616d7942548e4998d\",\n          \"partCode\": 2721,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Motore e cambio con supporti\",\n            \"sq\": \"Motorr. Kambio dhe suporte\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Radiatore olio\",\n            \"sq\": \"Radiator per vajin\"\n          },\n          \"_id\": \"5f969ec616d7942548e49279\",\n          \"partCode\": 2392,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Cambio e trasmissioni\",\n            \"sq\": \"Kambio dhe trasmisioni\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Radiatore olio cambio automatico\",\n            \"sq\": \"Radiator vaji per kambio automatike\"\n          },\n          \"_id\": \"5f969ec616d7942548e49ae8\",\n          \"partCode\": 5562,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Climatizzazione\",\n            \"sq\": \"Motorr. Kambio dhe suporte\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Condensatore a/c\",\n            \"sq\": \"Kondesator a/c\"\n          },\n          \"_id\": \"5f969ec616d7942548e49f16\",\n          \"partCode\": 3724,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Climatizzazione\",\n            \"sq\": \"Klima\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Deumidificatore a/c\",\n            \"sq\": \"Thares per kondicionerin\"\n          },\n          \"_id\": \"5f969ec616d7942548e49f1c\",\n          \"partCode\": 818,\n          \"selected\": true,\n          \"notes\": null\n        }\n      ],\n      \"tll\": [\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Fanaleria\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Proiettore\",\n            \"sq\": \"Fener\"\n          },\n          \"_id\": \"5f969ec516d7942548e48f20\",\n          \"partCode\": 2275,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Lamierati esterni\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Parafango ant.\",\n            \"sq\": \"Parafango. para\"\n          },\n          \"_id\": \"5f969ec516d7942548e48ca1\",\n          \"partCode\": 1935,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Sospensioni\",\n            \"sq\": \"Sospensionet\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Ammortizzatore ant.\",\n            \"sq\": \"Amortizator. para\"\n          },\n          \"_id\": \"5f969ec616d7942548e49648\",\n          \"partCode\": 86,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Sospensioni\",\n            \"sq\": \"Sospensionet\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Molla sosp. ant.\",\n            \"sq\": \"Suste per sospensionet. para\"\n          },\n          \"_id\": \"5f969ec616d7942548e49610\",\n          \"partCode\": 4980,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Cambio e trasmissioni\",\n            \"sq\": \"Kambio dhe trasmisioni\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Semialbero ant.\",\n            \"sq\": \"Semiaksi. para\"\n          },\n          \"_id\": \"5f969ec616d7942548e49b18\",\n          \"partCode\": 2837,\n          \"selected\": true,\n          \"notes\": null\n        }\n      ],\n      \"trr\": [\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Fanaleria\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Proiettore\",\n            \"sq\": \"Fener\"\n          },\n          \"_id\": \"5f969ec516d7942548e48f20\",\n          \"partCode\": 2275,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Lamierati esterni\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Parafango ant.\",\n            \"sq\": \"Parafango. para\"\n          },\n          \"_id\": \"5f969ec516d7942548e48ca1\",\n          \"partCode\": 1935,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Sospensioni\",\n            \"sq\": \"Sospensionet\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Ammortizzatore ant.\",\n            \"sq\": \"Amortizator. para\"\n          },\n          \"_id\": \"5f969ec616d7942548e49648\",\n          \"partCode\": 86,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Sospensioni\",\n            \"sq\": \"Sospensionet\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Molla sosp. ant.\",\n            \"sq\": \"Suste per sospensionet. para\"\n          },\n          \"_id\": \"5f969ec616d7942548e49610\",\n          \"partCode\": 4980,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Cambio e trasmissioni\",\n            \"sq\": \"Kambio dhe trasmisioni\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Semialbero ant.\",\n            \"sq\": \"Semiaksi. para\"\n          },\n          \"_id\": \"5f969ec616d7942548e49b18\",\n          \"partCode\": 2837,\n          \"selected\": true,\n          \"notes\": null\n        }\n      ],\n      \"tl\": [\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Cristalli\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Retrovisore est.\",\n            \"sq\": \"Pasqyre e jashtme\"\n          },\n          \"_id\": \"5f969ec616d7942548e497db\",\n          \"partCode\": 2411,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Lamierati esterni\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Porta ant.\",\n            \"sq\": \"Dera. para\"\n          },\n          \"_id\": \"5f969ec516d7942548e48c9e\",\n          \"partCode\": 2168,\n          \"selected\": true,\n          \"notes\": null\n        }\n      ],\n      \"tr\": [\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Cristalli\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Retrovisore est.\",\n            \"sq\": \"Pasqyre e jashtme\"\n          },\n          \"_id\": \"5f969ec616d7942548e497db\",\n          \"partCode\": 2411,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Lamierati esterni\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Porta ant.\",\n            \"sq\": \"Dera. para\"\n          },\n          \"_id\": \"5f969ec516d7942548e48c9e\",\n          \"partCode\": 2168,\n          \"selected\": true,\n          \"notes\": null\n        }\n      ],\n      \"tc\": [\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Sterzo\",\n            \"sq\": \"Timon\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Scatola sterzo\",\n            \"sq\": \"Grup timoni\"\n          },\n          \"_id\": \"5f969ec616d7942548e49533\",\n          \"partCode\": 2731,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Sterzo\",\n            \"sq\": \"Timon\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Dispositivo airbag lato guida\",\n            \"sq\": \"Airbag per krahun e shoferit\"\n          },\n          \"_id\": \"5f969ec616d7942548e4951f\",\n          \"partCode\": 3814,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Sterzo\",\n            \"sq\": \"Timon\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Volante\",\n            \"sq\": \"Timon\"\n          },\n          \"_id\": \"5f969ec616d7942548e49530\",\n          \"partCode\": 3720,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Rivestimenti interni e parti interne\",\n            \"sq\": \"Pajisje te brendshme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Cruscotto\",\n            \"sq\": \"Kroskot\"\n          },\n          \"_id\": \"5f969ec616d7942548e49d7e\",\n          \"partCode\": 1385,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Rivestimenti interni e parti interne\",\n            \"sq\": \"Pajisje te brendshme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Portaoggetti cruscotto\",\n            \"sq\": \"Kroskot\"\n          },\n          \"_id\": \"5f969ec616d7942548e49da3\",\n          \"partCode\": 2489,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Rivestimenti interni e parti interne\",\n            \"sq\": \"Pajisje te brendshme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Display navigatore satellitare\",\n            \"sq\": \"Navigator satelitor\"\n          },\n          \"_id\": \"5f969ec616d7942548e49cf6\",\n          \"partCode\": 3425,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Rivestimenti interni e parti interne\",\n            \"sq\": \"Pajisje te brendshme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Autoradio\",\n            \"sq\": \"Autoradio\"\n          },\n          \"_id\": \"5f969ec616d7942548e49d98\",\n          \"partCode\": 5626,\n          \"selected\": true,\n          \"notes\": null\n        }\n      ],\n      \"bc\": [\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Lamierati esterni\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Tetto cabina\",\n            \"sq\": \"Tavani kabines\"\n          },\n          \"_id\": \"5f969ec516d7942548e48ccd\",\n          \"partCode\": 3449,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Lamierati esterni\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Capote/hard-top\",\n            \"sq\": \"Kapot hardtop\"\n          },\n          \"_id\": \"5f969ec516d7942548e48c86\",\n          \"partCode\": 381,\n          \"selected\": true,\n          \"notes\": null\n        }\n      ],\n      \"bl\": [\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Lamierati esterni\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Parafango post.\",\n            \"sq\": \"Parafango. pas\"\n          },\n          \"_id\": \"5f969ec516d7942548e48caf\",\n          \"partCode\": 1945,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Fanaleria\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Fanale post.\",\n            \"sq\": \"Stop i pasem\"\n          },\n          \"_id\": \"5f969ec516d7942548e48f5c\",\n          \"partCode\": 868,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Sospensioni\",\n            \"sq\": \"Sospensionet\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Ammortizzatore post.\",\n            \"sq\": \"Amortizator. pas\"\n          },\n          \"_id\": \"5f969ec616d7942548e49646\",\n          \"partCode\": 97,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Sospensioni\",\n            \"sq\": \"Sospensionet\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Molla sosp. post.\",\n            \"sq\": \"Suste per sospensionet. pas\"\n          },\n          \"_id\": \"5f969ec616d7942548e49617\",\n          \"partCode\": 4981,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Lamierati esterni\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Porta post.\",\n            \"sq\": \"Dera. pas\"\n          },\n          \"_id\": \"5f969ec516d7942548e48cae\",\n          \"partCode\": 2187,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Sospensioni\",\n            \"sq\": \"Sospensionet\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Semialbero post.\",\n            \"sq\": \"Semiaksi. pas\"\n          },\n          \"_id\": \"5f969ec616d7942548e49600\",\n          \"partCode\": 2842,\n          \"selected\": true,\n          \"notes\": null\n        }\n      ],\n      \"br\": [\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Lamierati esterni\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Parafango post.\",\n            \"sq\": \"Parafango. pas\"\n          },\n          \"_id\": \"5f969ec516d7942548e48caf\",\n          \"partCode\": 1945,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Fanaleria\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Fanale post.\",\n            \"sq\": \"Stop i pasem\"\n          },\n          \"_id\": \"5f969ec516d7942548e48f5c\",\n          \"partCode\": 868,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Sospensioni\",\n            \"sq\": \"Sospensionet\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Ammortizzatore post.\",\n            \"sq\": \"Amortizator. pas\"\n          },\n          \"_id\": \"5f969ec616d7942548e49646\",\n          \"partCode\": 97,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Sospensioni\",\n            \"sq\": \"Sospensionet\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Molla sosp. post.\",\n            \"sq\": \"Suste per sospensionet. pas\"\n          },\n          \"_id\": \"5f969ec616d7942548e49617\",\n          \"partCode\": 4981,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Lamierati esterni\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Porta post.\",\n            \"sq\": \"Dera. pas\"\n          },\n          \"_id\": \"5f969ec516d7942548e48cae\",\n          \"partCode\": 2187,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Sospensioni\",\n            \"sq\": \"Sospensionet\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Semialbero post.\",\n            \"sq\": \"Semiaksi. pas\"\n          },\n          \"_id\": \"5f969ec616d7942548e49600\",\n          \"partCode\": 2842,\n          \"selected\": true,\n          \"notes\": null\n        }\n      ],\n      \"cc\": [\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Motore e cambio con supporti\",\n            \"sq\": \"Motorr. Kambio dhe suporte\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Motorino avviamento\",\n            \"sq\": \"Motorino per ndezjen\"\n          },\n          \"_id\": \"5f969ec616d7942548e492c9\",\n          \"partCode\": 1777,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Motore e cambio con supporti\",\n            \"sq\": \"Motorr. Kambio dhe suporte\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Alternatore\",\n            \"sq\": \"Alternator\"\n          },\n          \"_id\": \"5f969ec616d7942548e492af\",\n          \"partCode\": 57,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Climatizzazione\",\n            \"sq\": \"Motorr. Kambio dhe suporte\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Compressore a/c\",\n            \"sq\": \"Kompresor a/c\"\n          },\n          \"_id\": \"5f969ec616d7942548e49f1d\",\n          \"partCode\": 576,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Alimentazione e scarico\",\n            \"sq\": \"Shkarkimi dhe injeksioni\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Turbocompressore\",\n            \"sq\": \"Turbokompresor\"\n          },\n          \"_id\": \"5f969ec616d7942548e4998c\",\n          \"partCode\": 3690,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Motore e cambio con supporti\",\n            \"sq\": \"Motorr. Kambio dhe suporte\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Motore compl.\",\n            \"sq\": \"Motorr i kompletuar\"\n          },\n          \"_id\": \"5f969ec616d7942548e492b1\",\n          \"partCode\": 1771,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Motore e cambio con supporti\",\n            \"sq\": \"Motorr. Kambio dhe suporte\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Cambio compl.\",\n            \"sq\": \"Kambio e plote\"\n          },\n          \"_id\": \"5f969ec616d7942548e492c5\",\n          \"partCode\": 364,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Cambio e trasmissioni\",\n            \"sq\": \"Kambio dhe trasmisioni\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Albero trasmissione ant.\",\n            \"sq\": \"Bosht transmisioni. para\"\n          },\n          \"_id\": \"5f969ec616d7942548e49b42\",\n          \"partCode\": 47,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Cambio e trasmissioni\",\n            \"sq\": \"Kambio dhe trasmisioni\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Albero trasmissione centr.\",\n            \"sq\": \"Bosht transmisioni. qendror\"\n          },\n          \"_id\": \"5f969ec616d7942548e49ab1\",\n          \"partCode\": 50,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Cambio e trasmissioni\",\n            \"sq\": \"Kambio dhe trasmisioni\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Albero trasmissione post. compl.\",\n            \"sq\": \"Bosht transimisioni. pas. i kompletuar\"\n          },\n          \"_id\": \"5f969ec616d7942548e49ad5\",\n          \"partCode\": 5248,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Cambio e trasmissioni\",\n            \"sq\": \"Kambio dhe trasmisioni\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Differenziale ant. compl.\",\n            \"sq\": \"Diferencial para. i kompletuar\"\n          },\n          \"_id\": \"5f969ec616d7942548e49b63\",\n          \"partCode\": 5494,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Cambio e trasmissioni\",\n            \"sq\": \"Kambio dhe trasmisioni\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Differenziale post.\",\n            \"sq\": \"Diferencial i pasem\"\n          },\n          \"_id\": \"5f969ec616d7942548e49b2c\",\n          \"partCode\": 3429,\n          \"selected\": true,\n          \"notes\": null\n        }\n      ],\n      \"bbc\": [\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Lamierati esterni\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Cofano post.\",\n            \"sq\": \"Kofano. pas\"\n          },\n          \"_id\": \"5f969ec516d7942548e48c99\",\n          \"partCode\": 561,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Lamierati esterni\",\n            \"sq\": \"Flete te jashtme\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Portello post.\",\n            \"sq\": \"Dera e bagazhit\"\n          },\n          \"_id\": \"5f969ec516d7942548e48c9d\",\n          \"partCode\": 2209,\n          \"selected\": true,\n          \"notes\": null\n        },\n        {\n          \"category\": {\n            \"en\": \"\",\n            \"it\": \"Paraurti posteriore\",\n            \"sq\": \"Parakolp pas\"\n          },\n          \"title\": {\n            \"en\": \"\",\n            \"it\": \"Paraurti post.\",\n            \"sq\": \"Paraurti. pas\"\n          },\n          \"_id\": \"5f969ec616d7942548e494b7\",\n          \"partCode\": 1992,\n          \"selected\": true,\n          \"notes\": null\n        }\n      ]\n    },\n    \"photos\": [],\n    \"document\": \"\",\n    \"videos\": \"\"\n  }\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/car/edit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"car",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCars",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/car/?status=1&institution_id&role=LekoAdmin&page=1&limit=5&sort_by=date_created&descending=true&type=id&search&part&km=0,1000000&brand&model&engine&version&startDate&endDate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"car",
+								""
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1",
+									"description": "1(inventory)|2(history)"
+								},
+								{
+									"key": "institution_id",
+									"value": null,
+									"description": "Required only for the regular users, not the admin"
+								},
+								{
+									"key": "role",
+									"value": "LekoAdmin"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "sort_by",
+									"value": "date_created"
+								},
+								{
+									"key": "descending",
+									"value": "true"
+								},
+								{
+									"key": "type",
+									"value": "id",
+									"description": "id|pra|other"
+								},
+								{
+									"key": "search",
+									"value": null
+								},
+								{
+									"key": "part",
+									"value": null,
+									"description": "the part's code"
+								},
+								{
+									"key": "km",
+									"value": "0,1000000"
+								},
+								{
+									"key": "brand",
+									"value": null
+								},
+								{
+									"key": "model",
+									"value": null
+								},
+								{
+									"key": "engine",
+									"value": null
+								},
+								{
+									"key": "version",
+									"value": null
+								},
+								{
+									"key": "startDate",
+									"value": null
+								},
+								{
+									"key": "endDate",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PartsList (Inventory)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part/vehicle-list-v2?brand=13&model=57&version=1&institution_id=601bdcccab18354bbe15c304&lang=it",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part",
+								"vehicle-list-v2"
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "13"
+								},
+								{
+									"key": "model",
+									"value": "57"
+								},
+								{
+									"key": "version",
+									"value": "1"
+								},
+								{
+									"key": "institution_id",
+									"value": "601bdcccab18354bbe15c304"
+								},
+								{
+									"key": "lang",
+									"value": "it"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get videos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/videos/car?q=601bdcccab18354bbe15c304-1161-khc3ld1unwql.mp4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"videos",
+								"car"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "601bdcccab18354bbe15c304-1161-khc3ld1unwql.mp4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PartsList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/car/part-list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"car",
+								"part-list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicle Location",
+			"item": [
+				{
+					"name": "Get by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/car-location?id=63234b3b054b363b783463e4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"car-location"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "63234b3b054b363b783463e4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get locations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/car-location?role={{role}}&institution_id={{institutionId}}&limit=10&page=1&sort_by=_id&descending=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"car-location"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "{{role}}"
+								},
+								{
+									"key": "institution_id",
+									"value": "{{institutionId}}"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort_by",
+									"value": "_id"
+								},
+								{
+									"key": "descending",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit location",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/car-location?id=63234b3b054b363b783463e4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"car-location"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "63234b3b054b363b783463e4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete location",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/car-location?id=63234b3b054b363b783463e4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"car-location"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "63234b3b054b363b783463e4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get vehicles list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/car/location?id=63234b3b054b363b783463e4&page=1&limit=10&sort_by=_id&descending=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"car",
+								"location"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "63234b3b054b363b783463e4"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "sort_by",
+									"value": "_id"
+								},
+								{
+									"key": "descending",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Part Groups",
+			"item": [
+				{
+					"name": "getPartGroups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/part-groups?position=ttc",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"part-groups"
+							],
+							"query": [
+								{
+									"key": "position",
+									"value": "ttc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "History",
+			"item": [
+				{
+					"name": "getUserStats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/history/user/general/:userId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"history",
+								"user",
+								"general",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "5ddfe29153b40a7f2ada70f0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserActivity",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/history/user/single/:userId/?recent=true&details=false&status=0.1,0.2,1.0,1.4,2.0,2.1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"history",
+								"user",
+								"single",
+								":userId",
+								""
+							],
+							"query": [
+								{
+									"key": "recent",
+									"value": "true"
+								},
+								{
+									"key": "details",
+									"value": "false"
+								},
+								{
+									"key": "status",
+									"value": "0.1,0.2,1.0,1.4,2.0,2.1"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "5ddfe29153b40a7f2ada70f0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Whatsapp",
+			"item": [
+				{
+					"name": "Get parts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/chatbot/whatsapp/parts/:institutionId?code=188A4000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chatbot",
+								"whatsapp",
+								"parts",
+								":institutionId"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "188A4000"
+								}
+							],
+							"variable": [
+								{
+									"key": "institutionId",
+									"value": "5fdffcc24d8c6204adc27e4e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search license plate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/chatbot/whatsapp/license-plate/:plate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chatbot",
+								"whatsapp",
+								"license-plate",
+								":plate"
+							],
+							"variable": [
+								{
+									"key": "plate",
+									"value": "BS274YA"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const result = pm.response.json();",
+							"pm.environment.set('token', result.token);",
+							"pm.test('Logged In', () => {",
+							"    pm.expect(pm.environment.get('token')).to.eql(result.token);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"{{email}}\",\n\t\"password\": \"{{password}}\",\n    \"deviceId\": \"\",\n    \"firebaseToken\": \"\",\n    \"language\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login?mobile=true",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "mobile",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerifyToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const result = pm.response.json();",
+							"pm.environment.set('role', result.role);",
+							"pm.environment.set('userId', result._id);",
+							"pm.environment.set('institutionId', result.institution_id);",
+							"pm.test('Verified', () => {",
+							"    pm.expect(pm.environment.get('role')).to.eql(result.role);",
+							"    pm.expect(pm.environment.get('userId')).to.eql(result._id);",
+							"    pm.expect(pm.environment.get('institutionId')).to.eql(result.institution_id);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/verify-token",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"verify-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"token\": \"{{token}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/logout",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "exportParts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"leko@minello.com\",\r\n    \"password\": \"leko\",\r\n    \"limit\": 10,\r\n    \"skip\": 0,\r\n    \"noApplicability\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/export-parts",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"export-parts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "exportCars",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"m@mail.com\",\r\n    \"password\": \"mm\",\r\n    \"limit\": 10,\r\n    \"skip\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/export-parts/cars",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"export-parts",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shop parts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/shop/parts?limit=10&page=1&sort_by=date_created&descending=true&institution_id=5c7e57667e46b52eccb79021",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"shop",
+						"parts"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "sort_by",
+							"value": "date_created"
+						},
+						{
+							"key": "descending",
+							"value": "true"
+						},
+						{
+							"key": "search",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "brand",
+							"value": "16",
+							"disabled": true
+						},
+						{
+							"key": "model",
+							"value": "23",
+							"disabled": true
+						},
+						{
+							"key": "version",
+							"value": "37",
+							"disabled": true
+						},
+						{
+							"key": "institution_id",
+							"value": "5c7e57667e46b52eccb79021"
+						},
+						{
+							"key": "title_code",
+							"value": "3063",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shop car",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/shop/car?id=6389f8f35113ba705d34778d",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"shop",
+						"car"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6389f8f35113ba705d34778d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shop institution",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/shop/institution?id=5c7e57667e46b52eccb79021",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"shop",
+						"institution"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5c7e57667e46b52eccb79021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

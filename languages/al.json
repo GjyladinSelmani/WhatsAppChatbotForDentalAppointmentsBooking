@@ -1,0 +1,137 @@
+{
+    "dear": "Përshëndetje",
+    "welcome_message": "Uroj të jeni mire!\nJu lutem zgjidhni formën e shërbimit më poshtë:",
+    "button_title_set_a_dental_appointment": "Cakto Takim Dentar",
+    "button_title_speak_to_a_human": "Flisni Me Një Njeri",
+    "button_title_view_our_location": "Shiko Lokacionin",
+    "remind_message_text": "Ju kujtojmë se takimi juaj është pas 2 orësh",
+
+    "speak_to_a_human_text": "Ekipi ynë i përkushtuar është i gatshëm t'ju ndihmojë me çdo pyetje që keni.\nKonsultohuni me mjeken:",
+
+    "view_location_text": "Nëse jeni duke na vizituar për një konsultë ju mund të na gjeni lehtësisht në vendodhjen tone :",
+
+    "thank_you_text": "Faleminderit",
+    "consider_service_text": "për marrjen në konsideratë të shërbimeve tona",
+    "take_a_look_on_services": "Shikoni shërbimet tona dentare.",
+
+    "button_title_view_our_services": "Shikoni Shërbimet",
+
+    "we_provide_services_title": "Ne ofrojmë një gamë të gjerë shërbimesh",
+    "we_provide_services_body": "Ju lutem zgjidhni një nga shërbimet e ofruara:",
+    "we_provide_services_button": "Zgjidhni Një Shërbim",
+
+    "selected_service": "Shërbimi juaj i zgjedhur është:",
+    "selected_service_body": "Tani le të vendosim kohën e takimit",
+    "button_title_set_time": "Caktoni Kohen",
+
+    "select_month_text": "Ju falenderojmë për përzgjedhjen e klinikës tone dentare.\nJu lutem caktoni datën që ju përshtatet më së miri për takimin.",
+
+    "you_selected": "Ju zgjodhët",
+    "available_days_text": "Për këtë muaj kemi këto ditë në dispozicion, ju lutemi zgjidhni *ditën* që dëshironi të caktoni takimin",
+    "select_a_day": "Zgjidhni Një Ditë",
+
+    "select_hour_title": "Faleminderit,",
+    "select_hour_body": "ju lutem vendosni dhe *kohën* e preferuar për takimin.",
+    "select_hour": "Zgjidhni Një Orë",
+
+    "appointment_has_been_set": "Faleminderit, takimi juaj është caktuar.\nTë dhënat e takimit:",
+    "name": "Emri:",
+    "phone": "Telefoni:",
+    "appointment_type": "Lloji I Takimit:",
+    "date": "Data:",
+    "time": "Koha:",
+    "location": "Vendndodhja:",
+
+    "working_days":"Ditët E Punës 📅",
+    "set_appointment_on":"Cakto Takimin",
+    "available_hours":"Orare Të Lira ⏱️",
+    "available":"I Disponueshëm",
+    "appointment_for":"Takimi: ",
+    "this_is_the_description":"Ky Është Përshkrimi:",
+
+    "top_services": "Shërbimet 🦷 më të mira",
+
+    "dental_checkups": "Kontroll Dentar",
+    "dental_checkups_text": "Për një shëndet të mirë oral rekomandohen kontrolle në gjashtë muaj",
+
+    "treatment_tooth": "Trajtim I Dhëmbit",
+    "treatment_tooth_text": "Largojmë pjesën e prishur dhe parandalojmë dëmtimin e mëtejshëm",
+
+    "gum_disease_treatment": "Trajtimi I Sëmundjes",
+    "gum_disease_treatment_text": "Ofrojmë trajtim për të parandaluar sëmundjen e mishrave të dhëmbëve",
+
+    "root_canal_treatment": "Trajtimi I Kanalit",
+    "root_canal_treatment_text": "Ofrojmë trajtim për të hequr indin e dëmtuar për të shpëtuar dhëmbin",
+
+    "tooth_extraction": "Nxjerrja E Dhëmbëve",
+    "tooth_extraction_text": "Nëse një dhëmb është shumë i dëmtuar, rekomandohet heqja e dhëmbit",
+
+    "dental_implants": "Implante Dentare",
+    "dental_implants_text": "Ofrojmë implante dentare për të zëvendësuar dhëmbët që mungojnë",
+
+    "cosmetic_dentistry": "Stomatologji Estetike",
+    "cosmetic_dentistry_text": "Përmirësimi i pamjes së dhëmbëve si: zbardhues, faseta, brace",
+
+    "emergency_dental_services": "Shërbime Urgjente",
+    "emergency_dental_services_text": "Trajtime për dhëmb të këputur, dhimbje të forta, dhëmb të thyer",
+
+    "already_have_appointment": "\nkëto janë të dhënat e takimit të përcaktuar nga ju:",
+    "reschedule_appointment": "Ricaktoni Takimin",
+    "cancel_appointment": "Anuloni Takimin",
+    "cancelled_appointment_text": "Takimi juaj u anullua.",
+    "appointment_updated_text": "Takimi Juaj Është Përditësuar",
+
+    "admin_appointment_created_text":"👋 Pershendetje Klinika Dentare \n➕ Një takim i ri është *krijuar*",
+    "admin_appointment_updated_text":"👋 Pershendetje Klinika Dentare \n✐ Një takim ekzistues është *përditësuar*",
+    "admin_appointment_canceled_text":"👋 Pershendetje Klinika Dentare \n❌ Një takim është *fshirë* nga",
+
+    "admin_communicate_client_button":"Shkruaji Klientit",
+    "admin_communicate_client_text":"Orari i zgjedhur nuk është i disponueshëm për ju? ose duhet të bëni ndryshime në orar?, ju lutemi komunikoni me klientin ose anuloni takimin dhe ai do të njoftohet për këtë.",
+
+    "after_appointment_text":"✅ Takimi u realizua me sukses.\n\n📜 Ja disa informacione të tjera në lidhje me takimin dentar ...",
+    "admin_message_canceled_client_appointment": "✅ Takimi është *anuluar* me sukses dhe klienti është *njoftuar* për këtë",
+    "admin_message_write_to_client": "Ju lutemi shkruani *një mesazh* klientit tuaj në lidhje me takimin",
+    "client_message_admin_canceled_appointment": "ℹ️ Njoftim: Takimi juaj është *anuluar*. Ju lutemi lini një takim tjetër ose kontaktoni Klinika Dentare",
+    "message_from_admin": "ℹ️ Mesazh nga Klinika Dentare\n\n",
+    "do_not_reply": "Do-not-reply",
+    "message_sent_successfully": "✅ Mesazhi është dërguar me sukses",
+
+
+
+
+    "examination_control_title":"Ekzaminim - Kontroll",
+    "examination_control_description":"Kohëzgjatja: 10 min",
+
+    "extraction_removal_title":"Ekstraksion - Heqje",
+    "extraction_removal_description":"Kohëzgjatja: 5-30 min",
+
+    "detartarzh_cleaning_title":"Detartarzh - Pastrim",
+    "detartarzh_cleaning_description":"Kohëzgjatja: 30-45 min",
+
+    "grade_1_filling_title":"Mbushje e Gradës 1",
+    "grade_1_filling_description":"Kohëzgjatja: 20 min",
+
+    "grade_2_filling_title":"Mbushja e Gradës 2",
+    "grade_2_filling_description":"Kohëzgjatja: 30 min",
+
+    "grade_34_treatment_title":"Trajtim i Gradës 3/4",
+    "grade_34_treatment_description":"Kohëzgjatja: 60 min",
+
+    "placement_of_1_implant_title":"Vendosja e 1 Implanti",
+    "placement_of_1_implant_description":"Kohëzgjatja: 20 min",
+
+    "apply_maskerina_title":"Vendosje Maskerina",
+    "apply_maskerina_description":"Kohëzgjatja: 30-60 min",
+
+    "placement_of_piercing_title":"Vendosja e Piercing",
+    "placement_of_piercing_description":"Kohëzgjatja: 10 min",
+
+    "jaw_decortication_title":"Dekortikim Nofulle",
+    "jaw_decortication_description":"Kohëzgjatja: 60-90 min",
+
+    "text_for_openAI":"Generate for me a successful and thankful sentence that a dental doctor can send to a client (no greetings, no doctor name). Write for me a sentence that can be as a followup message from doctor to client, for example the client had a dental appointment for",
+    "regards_text":"\n\nGjithë të mirat,\n Klinika Dentare",
+    "follow_up_message_text":"✅ *Mesazh vijues,*\n",
+    "follow_up_message_to_client":"shpresojmë se keni pasur një vizitë të mirë me ne dje! Ne donim të kontrollonim dhe të shihnim se si ndiheni. Nëse keni ndonjë shqetësim ose nëse ka ndonjë gjë që dëshironi të diskutoni në lidhje me trajtimin tuaj dentar, ju lutemi na tregoni. Mirëqenia juaj është e rëndësishme për ne. Faleminderit që zgjodhët klinikën tonë dentare. Ju dëshirojmë nje ditë te mrekullueshme!"
+
+}

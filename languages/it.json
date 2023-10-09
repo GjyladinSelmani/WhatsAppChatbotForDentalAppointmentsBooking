@@ -1,0 +1,137 @@
+{
+    "dear": "Ciao",
+    "welcome_message": "Spero che questo messaggio ti trovi bene\nGrazie per averci scelto come fornitore di cure odontoiatriche.\n\nVuoi fissare un appuntamento dal dentista",
+    "button_title_set_a_dental_appointment": "Fissare un appt",
+    "button_title_speak_to_a_human": "Parla con noi",
+    "button_title_view_our_location": "Visualizza posizione",
+    "remind_message_text": "Vogliamo ricordarti che il tuo incontro è tra 2 ore",
+
+    "speak_to_a_human_text": "Hai bisogno di ulteriore assistenza?\nParla con un rappresentante",
+
+    "view_location_text": "Controlla la nostra posizione",
+
+    "thank_you_text": "Grazie",
+    "consider_service_text": "per considerare i nostri servizi",
+    "take_a_look_on_services": "Dai un'occhiata ai nostri servizi odontoiatrici.",
+
+    "button_title_view_our_services": "Visualizza i servizi",
+    
+    "we_provide_services_title": "Forniamo una vasta gamma di servizi",
+    "we_provide_services_body": "Alcuni dei servizi comuni che puoi ottenere dai nostri dentisti includono",
+    "we_provide_services_button": "Scegli il servizio",
+
+    "selected_service": "Il servizio selezionato è:",
+    "selected_service_body": "Adesso impostiamo l'orario dell'appuntamento",
+    "button_title_set_time": "Imposta l'ora",
+
+    "select_month_text": "Siamo sinceramente lieti che ci abbiate scelto per le vostre cure dentistiche.\nSiamo sempre entusiasti di vedere nuovi sorrisi entrare dalla nostra porta!\n\nPer fornirti il miglior livello di assistenza, ti preghiamo di fissare l'orario dell'appuntamento",
+
+    "you_selected": "Hai selezionato",
+    "available_days_text": "Per questo mese abbiamo questi giorni disponibili, seleziona il *giorno* in cui vuoi fissare l'appuntamento",
+    "select_a_day": "Seleziona un giorno",
+
+    "select_hour_title": "Grazie, per finalizzare il tuo appuntamento dal dentista,",
+    "select_hour_body": "abbiamo solo bisogno di sapere quale *tempo* funziona meglio per te.",
+    "select_hour": "Seleziona un'ora",
+
+    "appointment_has_been_set": "Grazie, il tuo appuntamento è stato fissato.",
+    "name": "Nome:",
+    "phone": "Telefono:",
+    "appointment_type": "Tipo di appuntamento:",
+    "date": "Data:",
+    "time": "Tempo:",
+    "location": "Posizione:",
+
+    
+
+    "working_days":"Giorni lavorativi 📅",
+    "set_appointment_on":"Fissa appuntamento su",
+    "available_hours":"Orari disponibili ⏱️",
+    "available":"Disponibile",
+    "appointment_for":"Appuntamento per",
+    "this_is_the_description":"Questa è la descrizione:",
+
+    "top_services": "Top 🦷 Servizi:",
+    
+    "dental_checkups": "Controlli dentistici",
+    "dental_checkups_text": "Per una buona igiene orale si consigliano controlli semestrali",
+
+    "treatment_tooth": "Trattamento del dente",
+    "treatment_tooth_text": "Rimuovere la parte cariata del dente e prevenire ulteriori danni",
+
+    "gum_disease_treatment": "Trattamento malattia",
+    "gum_disease_treatment_text": "Offriamo un trattamento per prevenire le malattie gengivali",
+
+    "root_canal_treatment": "Trattamento canalare",
+    "root_canal_treatment_text": "Trattamento per rimuovere il tessuto danneggiato - salva il dente",
+
+    "tooth_extraction": "Estrazione di dente",
+    "tooth_extraction_text": "Per denti molto danneggiati, eseguiamo l'estrazione del dente",
+
+    "dental_implants": "Impianti dentali",
+    "dental_implants_text": "Offriamo impianti dentali per sostituire i denti mancanti",
+
+    "cosmetic_dentistry": "Odontoiatria estetica",
+    "cosmetic_dentistry_text": "Miglioramento dell'aspetto come: sbiancamento, faccette",
+
+    "emergency_dental_services": "Servizi di emergenza",
+    "emergency_dental_services_text": "Trattamenti per dente scheggiato, forte dolore, dente rotto",
+
+    "already_have_appointment": "Hai già preso appuntamento",
+    "reschedule_appointment": "Riprogrammare appt",
+    "cancel_appointment": "Annulla appt",
+    "cancelled_appointment_text": "Hai cancellato il tuo appuntamento",
+    "appointment_updated_text": "Il tuo appuntamento è stato aggiornato",
+
+    "admin_appointment_created_text":"👋 Salve Klinika Dentare\n➕ È stato *creato* un nuovo appuntamento",
+    "admin_appointment_updated_text":"👋 Salve Klinika Dentare\n✐ Un appuntamento esistente è stato *aggiornato*",
+    "admin_appointment_canceled_text":"👋 Salve Klinika Dentare\n❌ Un appuntamento è stato *cancellato* da",
+
+    "admin_communicate_client_button":"Chatta Con Cliente",
+    "admin_communicate_client_text":"Il programma scelto non è disponibile per te o devi apportare modifiche al programma, si prega di comunicare con il cliente o annullare l'incontro e lui ne sarà informato.",
+
+    "after_appointment_text":"✅ L'appuntamento è andato a buon fine.\n\n📜 Ecco qualche informazione in più relativa all'appuntamento dal dentista...",
+    "admin_message_canceled_client_appointment": "✅ L'appuntamento è stato *cancellato* con successo e il cliente ne è stato *informato*",
+    "admin_message_write_to_client": "Si prega di scrivere *un messaggio* per il cliente sull'incontro",
+    "client_message_admin_canceled_appointment": "ℹ️ Avviso: il tuo appuntamento è stato *annullato*. Fissa un altro appuntamento o contatta il Klinika Dentare",
+    "message_from_admin": "ℹ️ Messaggio dal Klinika Dentare\n\n",
+    "do_not_reply": "Do-not-reply",
+    "message_sent_successfully": "✅ Il messaggio è stato inviato con successo",
+
+
+    "examination_control_title":"Esame - Controllo",
+    "examination_control_description":"Durata: 10 min",
+
+    "extraction_removal_title":"Estrazione - Rimozione",
+    "extraction_removal_description":"Durata: 5-30 min",
+
+    "detartarzh_cleaning_title":"Pulizia del Tartaro",
+    "detartarzh_cleaning_description":"Durata: 30-45 min",
+
+    "grade_1_filling_title":"Riempimento - Grado 1",
+    "grade_1_filling_description":"Durata: 20 min",
+
+    "grade_2_filling_title":"Riempimento - Grado 2",
+    "grade_2_filling_description":"Durata: 30 min",
+
+    "grade_34_treatment_title":"Trattamento Grado 3/4",
+    "grade_34_treatment_description":"Durata: 60 min",
+
+    "placement_of_1_implant_title":"Impianto Dentale",
+    "placement_of_1_implant_description":"Durata: 20 min",
+
+    "apply_maskerina_title":"Applicare la Maschera",
+    "apply_maskerina_description":"Durata: 30-60 min",
+
+    "placement_of_piercing_title":"Mettre Piercing",
+    "placement_of_piercing_description":"Durata: 10 min",
+
+    "jaw_decortication_title":"Decorticare Mascella",
+    "jaw_decortication_description":"Durata: 60-90 min",
+
+    "text_for_openAI":"Generate for me a successful and thankful sentence that a dental doctor can send to a client (no greetings, no doctor name). Write for me a sentence that can be as a followup message from doctor to client, for example the client had a dental appointment for",
+    "regards_text":"\n\nDistinti saluti,\nKlinika Dentare",
+    "follow_up_message_text":"✅ *Messaggio di follow-up,*\n",
+    "follow_up_message_to_client":"speriamo che tu abbia passato una bella visita con noi ieri! Volevamo fare il check-in e vedere come ti senti. Se hai qualche disagio o se c'è qualcosa che vorresti discutere riguardo al tuo trattamento dentale, faccelo sapere. Il tuo benessere è importante per noi. Grazie per aver scelto la nostra clinica odontoiatrica. Buona giornata!"
+
+}

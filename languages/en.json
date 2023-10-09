@@ -1,0 +1,141 @@
+{
+    "dear": "Dear",
+    "welcome_message": "I hope this message finds you well\nThank you for choosing us as your dental care provider\n\nWould you like to set a dental appointment",
+    "button_title_set_a_dental_appointment": "Set a Dental Appt",
+    "button_title_speak_to_a_human": "Speak to a Human",
+    "button_title_view_our_location": "View Our Location",
+    "remind_message_text": "We want to remind you that your meeting is in 2 hours",
+
+    "speak_to_a_human_text": "Need further assistance?\nTalk to a representative",
+
+    "view_location_text": "Check Out Our Location",
+
+    "thank_you_text": "Thank you",
+    "consider_service_text": "for considering our services",
+    "take_a_look_on_services": "Take a look on our dental services.",
+
+    "button_title_view_our_services": "View our services",
+
+    "we_provide_services_title": "We provide a wide range of services",
+    "we_provide_services_body": "Some of the common services that you can get from our dentists include",
+    "we_provide_services_button": "Select a service",
+
+    "selected_service": "Your selected service is:",
+    "selected_service_body": "Now lets set up the time of appointment",
+    "button_title_set_time": "Set the time",
+
+
+    "select_month_text": "We are genuinely pleased that you have chosen us for your dental care.\nWe are always excited to see new smiles coming through our door!\n\nIn order to provide you with the best level of care, please set your appintment time",
+
+
+    "you_selected": "You selected",
+    "available_days_text": "For this month we have these available days, please select the *day* you want to set the appointment",
+    "select_a_day": "Select a day",
+
+    "select_hour_title": "Thank you, to finalize your dental appointment,",
+    "select_hour_body": "we just need to know what *time* works best for you.",
+    "select_hour": "Select a hour",
+
+
+    "appointment_has_been_set": "Thank you, your appointment has been set.",
+    "name": "Name:",
+    "phone": "Phone:",
+    "appointment_type": "Appointment Type:",
+    "date": "Date:",
+    "time": "Time:",
+    "location": "Location:",
+
+    "working_days":"Working days 📅",
+    "set_appointment_on":"Set appointment on",
+    "available_hours":"Available hours ⏱️",
+    "available":"Available",
+    "appointment_for":"Appointment for",
+    "this_is_the_description":"This is the description:",
+
+    "top_services": "Top 🦷 Services:",
+
+    "dental_checkups": "Dental Checkups",
+    "dental_checkups_text": "For a good oral health is recommend checkups every six months",
+
+    "treatment_tooth": "Treatment of tooth",
+    "treatment_tooth_text": "Remove the decayed portion of tooth and prevent further damage",
+
+    "gum_disease_treatment": "Gum disease treatment",
+    "gum_disease_treatment_text": "We can provide treatment to manage and prevent gum disease",
+
+    "root_canal_treatment": "Root canal treatment",
+    "root_canal_treatment_text": "Can perform a treatment to remove the damaged tissue to save tooth",
+
+    "tooth_extraction": "Tooth extraction",
+    "tooth_extraction_text": "If a tooth is highly damaged, is recommended tooth extraction",
+
+    "dental_implants": "Dental implants",
+    "dental_implants_text": "We provide dental implant services to replace missing teeth",
+
+    "cosmetic_dentistry": "Cosmetic dentistry",
+    "cosmetic_dentistry_text": "Improving the appearance of teeth as whitening, veneers, braces",
+
+    "emergency_dental_services": "Emergency dental services",
+    "emergency_dental_services_text": "Treatments for a knocked-out tooth, severe toothache, broken tooth",
+
+    "already_have_appointment": "You have already an upcoming appointment",
+    "reschedule_appointment": "Reschedule Appt",
+    "cancel_appointment": "Cancel Appointment",
+    "cancelled_appointment_text": "❌ You have cancelled your appointment",
+    "appointment_updated_text": "✐ Your appointment has been updated",
+
+    "admin_appointment_created_text":"👋 Hello Klinika Dentare \n➕ A new appointment has been *created*:",
+    "admin_appointment_updated_text":"👋 Hello Klinika Dentare \n✐ An existing appointment has been *updated*",
+    "admin_appointment_canceled_text":"👋 Hello Klinika Dentare \n❌ An appointment has been *deleted* by",
+
+    "admin_communicate_client_button":"Write to Client",
+    "admin_communicate_client_text":"The chosen schedule is not available for you or you have to make changes to the schedule, communicate with the client or cancel the meeting and he will be notified about this.",
+
+    "after_appointment_text":"✅ *Appointment was successful.*\n\n📜 Here are some more info related to the dental appointment ...",
+
+    "admin_message_canceled_client_appointment": "✅ Appointment has been *canceled* successfully and client has been *notified* about this",
+    "admin_message_write_to_client": "Please write *one* message to your client about the meeting",
+    "client_message_admin_canceled_appointment": "ℹ️ Notice: Your appointment has been *cancelled*. Please make another appointment or contact Klinika Dentare",
+    "message_from_admin": "ℹ️ Message from Klinika Dentare\n\n",
+    "do_not_reply": "Do-not-reply",
+    "message_sent_successfully": "✅ The message has been sent successfully",
+
+
+
+
+
+    "examination_control_title":"Examination - Control",
+    "examination_control_description":"Duration: 10 min",
+
+    "extraction_removal_title":"Extraction - Removal",
+    "extraction_removal_description":"Duration: 5-30 min",
+
+    "detartarzh_cleaning_title":"Cleaning Tartar",
+    "detartarzh_cleaning_description":"Duration: 30-45 min",
+
+    "grade_1_filling_title":"Grade 1 Filling",
+    "grade_1_filling_description":"Duration: 20 min",
+
+    "grade_2_filling_title":"Grade 2 Filling",
+    "grade_2_filling_description":"Duration: 30 min",
+
+    "grade_34_treatment_title":"Grade 3/4 Treatment",
+    "grade_34_treatment_description":"Duration: 60 min",
+
+    "placement_of_1_implant_title":"1 Implant Placement",
+    "placement_of_1_implant_description":"Duration: 20 min",
+
+    "apply_maskerina_title":"Apply Maskerina",
+    "apply_maskerina_description":"Duration: 30-60 min",
+
+    "placement_of_piercing_title":"Placement of Piercing",
+    "placement_of_piercing_description":"Duration: 10 min",
+
+    "jaw_decortication_title":"Jaw Decortication",
+    "jaw_decortication_description":"Duration: 60-90 min",
+
+    "text_for_openAI":"Generate for me a successful and thankful sentence that a dental doctor can send to a client (no greetings, no doctor name). Write for me a sentence that can be as a followup message from doctor to client, for example the client had a dental appointment for",
+    "regards_text":"\n\nBest Regards,\n Klinika Dentare",
+    "follow_up_message_text":"✅ *Follow up message,*\n",
+    "follow_up_message_to_client":"we hope you had a great visit with us yesterday! We wanted to check in and see how you're feeling. If you have any discomfort or if there's anything you'd like to discuss regarding your dental treatment, please let us know. Your well-being is important to us. Thank you for choosing our dental clinic. Have a wonderful day!"
+}
